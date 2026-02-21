@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="email=no, telephone=no, address=no">
+
+
+  <title>Termux Commands – Quick Reference</title>
+  <meta name="description" content="Quick guide to my most used Termux commands.">
+
+
+  <meta property="og:url" content="https://termux-commands.pages.dev/">
+  <meta property="og:title" content="Termux Commands – Quick Reference">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Quick guide to my most used Termux commands.">
+  <meta property="og:image" content="https://termux-commands.pages.dev/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="">
+
+  <meta property="og:site_name" content="Termux Commands – Complete Reference">
+  <meta property="og:locale" content="en_US">
+
+
+  <link rel="canonical" href="https://termux-commands.pages.dev/">
+
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+
+
+
+<body>
+
+<header>
+  <h1>Termux Commands</h1>
+  <p>20260221 1</p>
+  <nav class="internal-link">
+    <ul>
+      <li><a href="#directory-management">Directory Management</a></li>
+      <li><a href="#file-management">File Management</a></li>
+      <li><a href="#path-and-pattern-shortcuts">Path & Pattern Shortcuts</a></li>
+      <li><a href="#text-editing">Text Editing</a></li>
+      <li><a href="#package-management">Package Management</a></li>
+      <li><a href="#restrictions-permissions">Restrictions / Permissions</a></li>
+      <li><a href="#exit-session">Exit / Session</a></li>
+    </ul>
+  </nav>
+
+  <nav class="external-link">
+    <h2>Quick Reference（External）</h2>
+    <ul>
+      <li><a href="pages/local-server.html">Local Server</a></li>
+      <li><a href="pages/react-commands.html">React Commands</a></li>
+      <li><a href="pages/git-commands.html">Git Commands</a></li>
+      <li><a href="pages/shell-scripts.html">Shell Scripts</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+
+<main>
+  <p style="
+    margin-bottom: 32px;
+    font-size: 16px;
+  "># Arguments enclosed in [ ] are optional and can be omitted.</p>
+
+  <section id="directory-management">
+    <h2>Directory Management</h2>
+
+    <nav>
+      <a href="#pwd">pwd</a>
+      <a href="#ls">ls</a>
+      <a href="#cd">cd</a>
+      <a href="#mkdir">mkdir</a>
+      <a href="#rmdir">rmdir</a>
+      <a href="#tree">tree</a>
+    </nav>
+
+    <section id="pwd">
+      <h3>pwd</h3>
+      <p>pwd = print working directory</p>
+      <p>Show current directory</p>
+      <pre data-copy><code>pwd</code></pre>
+    </section>
+
+    <section id="ls">
+      <h3>ls</h3>
+      <p>ls = list</p>
+      <p>Show all files and directories</p>
+      <div class="code-group">
+        <pre data-copy><code>ls [DIR]</code></pre>
+        <pre data-copy><code>ls -l [DIR]</code></pre>
+        <pre data-copy><code>ls -a [DIR]</code></pre>
+        <pre data-copy><code>ls -lh [DIR]</code></pre>
+        <pre data-copy><code>ls -lt [DIR]</code></pre>
+        <pre data-copy><code>ls -ltr [DIR]</code></pre>
+        <pre data-copy><code>ls -lah [DIR]</code></pre>
+        <pre data-copy><code>ls -d */</code></pre>
+      </div>
+      <dl>
+        <dt>-l</dt>
+        <dd>Show long format</dd>
+        <dt>-a</dt>
+        <dd>Show all entries （including hidden files）</dd>
+        <dt>-h</dt>
+        <dd>Human-readable size（KB・MB・GB）</dd>
+        <dt>-t</dt>
+        <dd>Sort by modification time</dd>
+        <dt>-r</dt>
+        <dd>Reverse</dd>
+        <dt>-lah</dt>
+        <dd>Format + All entries + Human-readable</dd>
+        <dt>-d */</dt>
+        <dd>List directories only</dd>
+      </dl>
+    </section>
+
+    <section id="cd">
+      <h3>cd</h3>
+      <p>cd = change directory</p>
+      <pre data-copy><code>cd [DIR]</code></pre>
+    </section>
+
+    <section id="mkdir">
+      <h3>mkdir</h3>
+      <p>mkdir = make directory</p>
+      <p>Creates a new directory (folder)</p>
+      <div class="code-group">
+        <pre data-copy><code>mkdir [DIR]/myfolder</code></pre>
+        <pre data-copy><code>mkdir dir1 dir2 dir3</code></pre>
+        <pre data-copy><code>mkdir [DIR]/{dir1,dir2,dir3}</code></pre>
+        <pre data-copy><code>mkdir -p [DIR]/myfolder</code></pre>
+        <pre data-copy><code>mkdir -v myfolder</code></pre>
+      </div>
+      <dl>        
+        <dt>"my fodler"</dt>
+        <dd>If the file name contains spaces, use double quotes</dd>
+        <dt>dir1 dir2 dir3</dt>
+        <dd>Create multiple directories</dd>
+        <dt>-p</dt>
+        <dd>Creates directory with missing parents</dd>
+        <dt>-v</dt>
+        <dd>Show what the command is doing</dd>
+      </dl>
+    </section>
+
+    <section id="rmdir">
+      <h3>rmdir</h3>
+      <p>rmdir = remove directory</p>
+      <p>Removes an empty directory (folder)</p>
+      <div class="code-group">
+        <pre data-copy><code>rmdir [DIR]/Empty DIR</code></pre>
+        <pre data-copy><code>rmdir -p dir1/dir2/dir3</code></pre>
+      </div>
+      <dl>
+        <dt>-p</dt>
+        <dd>Deletes dir3 → dir2 → dir1 if empty</dd>
+      </dl>
+    </section>
+
+    <section id="tree">
+      <h3>tree</h3>
+      <pre data-copy><code>pkg install tree</code></pre>
+      <p>Display the directory structure as a tree</p>
+      <div class="code-group">
+        <pre data-copy><code>tree [DIR]</code></pre>
+        <pre data-copy><code>tree -L Num [DIR]</code></pre>
+        <pre data-copy><code>tree -a [DIR]</code></pre>
+        <pre data-copy><code>tree -d [DIR]</code></pre>
+        <pre data-copy><code>tree -f [DIR]</code></pre>
+        <pre data-copy><code>tree -h [DIR]</code></pre>
+      </div>
+      <dl>
+        <dt>-L Num</dt>
+        <dd>-L 2 = display up to 2 levels of directories</dd>
+        <dt>-a</dt>
+        <dd>Show all entries （including hidden files）</dd>
+        <dt>-d</dt>
+        <dd>List directories only</dd>
+        <dt>-f</dt>
+        <dd>Show full path</dd>
+        <dt>-h</dt>
+        <dd>Human-readable size（KB・MB・GB）</dd>
+      </dl>
+    </section>
+
+  </section>
+
+
+
+  <section id="file-management">
+    <h2>File Management</h2>
+
+    <nav>
+      <a href="#cp">cp</a>
+      <a href="#mv">mv</a>
+      <a href="#rm">rm</a>
+      <a href="#touch">touch</a>
+      <a href="#echo">echo</a>
+      <a href="#cat">cat</a>
+      <a href="#less">less</a>
+      <a href="#head">head</a>
+      <a href="#tail">tail</a>
+    </nav>
+
+    <section id="cp">
+      <h3>cp</h3>
+      <p>Copy file</p>
+      <div class="code-group">
+        <pre data-copy><code>cp [DIR]/file [DIR]/</code></pre>
+        <pre data-copy><code>cp file1 file2</code></pre>
+        <pre data-copy><code>cp -i [DIR]/file [DIR]/</code></pre>
+        <pre data-copy><code>cp -n [DIR]/file [DIR]/</code></pre>
+        <pre data-copy><code>cp -r [DIR]/folder [DIR]/</code></pre>
+      </div>
+      <dl>
+        <dt>file1 file2</dt>
+        <dd>Copy file1.txt to file2.txt (overwrites if exists)</dd>
+        <dt>-i</dt>
+        <dd>Ask before overwriting</dd>
+        <dt>-n</dt>
+        <dd>Do not overwrite existing files</dd>
+        <dt>-r</dt>
+        <dd>Copy a folder including all its contents</dd>
+      </dl>
+    </section>
+
+    <section id="mv">
+      <h3>mv</h3>
+      <p>Move or rename file</p>
+      <div class="code-group">
+        <pre data-copy><code>mv [DIR]/file [DIR]/</code></pre>
+        <pre data-copy><code>mv file1 file2</code></pre>
+        <pre data-copy><code>mv dir1/ dir2/</code></pre>
+        <pre data-copy><code>mv -i [DIR]/file [DIR]/</code></pre>
+        <pre data-copy><code>mv -n [DIR]/file [DIR]/</code></pre>
+      </div>
+      <dl>
+        <dt>file1 file2</dt>
+        <dd>Renames file1 to file2, or overwrites file2 if it already exists</dd>
+        <dt>dir1/ dir2/</dt>
+        <dd>Renames dir1 to dir2, or overwrites dir2 if it already exists</dd>
+        <dt>-i</dt>
+        <dd>Ask for confirmation if the target file exists</dd>
+        <dt>-n</dt>
+        <dd>Do not overwrite an existing file</dd>
+      </dl>
+    </section>
+
+    <section id="rm">
+      <h3>rm</h3>
+      <p>Delete file</p>
+      <div class="code-group">
+        <pre data-copy><code>rm [DIR]/file</code></pre>
+        <pre data-copy><code>rm file1 file2</code></pre>
+        <pre data-copy><code>rm *.txt</code></pre>
+        <pre data-copy><code>rm -i [DIR]/file</code></pre>
+        <pre data-copy><code>rm -r [DIR]</code></pre>
+        <pre data-copy><code>rm -f [DIR]/file</code></pre>
+      </div>
+      <dl>
+        <dt>file1 file2</dt>
+        <dd>Delete multiple files</dd>
+        <dt>*.txt</dt>
+        <dd>All files ending with .txt</dd>
+        <dt>-i</dt>
+        <dd>Ask before deleting</dd>
+        <dt>-r</dt>
+        <dd>Delete folders and their contents</dd>
+        <dt>-f</dt>
+        <dd>No prompts, no errors for missing files</dd>
+      </dl>
+    </section>
+
+    <section id="touch">
+      <h3>touch</h3>
+      <p>Create empty file</p>
+      <p>If the file exists, update the timestamp</p>
+      <div class="code-group">
+        <pre data-copy><code>touch [DIR]/myfile</code></pre>
+        <pre data-copy><code>touch file1 file2 file3</code></pre>
+        <pre data-copy><code>touch [DIR]/{file1,file2,file3}</code></pre>
+      </div>
+      <dl>        
+        <dt>"my file"</dt>
+        <dd>If the file name contains spaces, use double quotes</dd>
+        <dt>file1 file2 file3</dt>
+        <dd>Create multiple files</dd>
+      </dl>
+    </section>
+
+    <section id="echo">
+      <h3>echo</h3>
+      <p>Write to a file</p>
+      <p>Creates a new file if it does not exist</p>
+      <div class="code-group">
+        <pre data-copy><code>echo "text" &gt; [DIR]/filename</code></pre>
+        <pre data-copy><code>echo "text" &gt;&gt; [DIR]/filename</code></pre>
+        <pre data-copy><code>echo -n "text" &gt; [DIR]/filename</code></pre>
+        <pre data-copy><code>echo -e "text" &gt; [DIR]/filename</code></pre>
+      </div>
+      <dl>
+        <dt>&gt;</dt>
+        <dd>overwrite a file</dd>
+        <dt>&gt;&gt;</dt>
+        <dd>append to a file</dd>
+        <dt>-n</dt>
+        <dd>Do not add newline at the end</dd>
+        <dt>-e</dt>
+        <dd>Enable interpretation of backslash escapes (\n, \t, etc.)</dd>
+      </dl>
+    </section>
+
+    <section id="cat">
+      <h3>cat</h3>
+      <p>Display and concatenate file contents</p>
+      <div class="code-group">
+        <pre data-copy><code>cat [DIR]/filename</code></pre>
+        <pre data-copy><code>cat file1 file2</code></pre>
+        <pre data-copy><code>cat file1 file2 &gt; newfile</code></pre>
+        <pre data-copy><code>cat &gt;&gt; [DIR]/filename</code></code></code></pre>
+        <pre data-copy><code>cat -n [DIR]/filename</code></code></code></pre>
+        <pre data-copy><code>cat -b [DIR]/filename</code></code></code></pre>
+        <pre data-copy><code>cat -A [DIR]/filename</code></code></code></pre>
+        <pre data-copy><code>cat -E [DIR]/filename</code></code></code></pre>
+        <pre data-copy><code>cat -T [DIR]/filename</code></code></code></pre>
+        <pre data-copy><code>cat -s [DIR]/filename</code></code></code></pre>
+      </div>
+      <dl>
+        <dt>file1 file2</dt>
+        <dd>Display multiple files</dd>
+        <dt>file1 file2 &gt; newfile</dt>
+        <dd>Merge files and create a new file</dd>
+        <dt>&gt;&gt;</dt>
+        <dd>Append to a file<br>Type text → Enter → Ctrl+D to finish</dd>
+        <dt>-n</dt>
+        <dd>Show file with line numbers</dd>
+        <dt>-b</dt>
+        <dd>Show file with line numbers on non-empty lines</dd>
+        <dt>-A</dt>
+        <dd>Show all characters, including line ends and tabs</dd>
+        <dt>-E</dt>
+        <dd>Show $ at the end of each line</dd>
+        <dt>-T</dt>
+        <dd>Show tabs as ^I</dd>
+        <dt>-s</dt>
+        <dd>Squeeze multiple blank lines into one</dd>
+      </dl>
+    </section>
+
+    <section id="less">
+      <h3>less</h3>
+      <p>View file page by page</p>
+      <div class="code-group">
+        <pre data-copy><code>less [DIR]/filename</code></pre>
+        <pre data-copy><code>less -N [DIR]/filename</code></pre>
+        <pre data-copy><code>less -S [DIR]/filename</code></pre>
+        <pre data-copy><code>less -i [DIR]/filename</code></pre>
+        <pre data-copy><code>less +Num [DIR]/filename</code></pre>
+        <pre data-copy><code>LESS='-R' less [DIR]/filename</code></pre>
+      </div>
+      <dl>
+        <dt>Space</dt>
+        <dd>Move to the next page</dd>
+        <dt>b</dt>
+        <dd>Move to the previous page</dd>
+        <dt>↑ / ↓</dt>
+        <dd>Scroll one line at a time</dd>
+        <dt>g</dt>
+        <dd>Go to the beginning of the file</dd>
+        <dt>G</dt>
+        <dd>Go to the end of the file</dd>
+        <dt>/Text</dt>
+        <dd>Search for a text string</dd>
+        <dt>n</dt>
+        <dd>Go to the next search result</dd>
+        <dt>q</dt>
+        <dd>Quit less</dd>
+      </dl>
+      <dl>
+        <dt>-N</dt>
+        <dd>Show line numbers</dd>
+        <dt>-S</dt>
+        <dd>No line wrap / horizontal scroll</dd>
+        <dt>-i</dt>
+        <dd>Case-insensitive search（/Text）</dd>
+        <dt>+Num</dt>
+        <dd>Start at end of file<br>(+100 = start at line 100)</dd>
+        <dt>LESS='-R'</dt>
+        <dd>Display raw color codes</dd>
+      </dl>
+    </section>
+
+    <section id="head">
+      <h3>head</h3>
+      <p>Show first 10 lines</p>
+      <div class="code-group">
+        <pre data-copy><code>head [DIR]/filename</code></pre>
+        <pre data-copy><code>head file1 file2</code></pre>
+        <pre data-copy><code>head -n Num [DIR]/filename</code></pre>
+      </div>
+      <dl>
+        <dt>file1 file2</dt>
+        <dd>Show first 10 lines of each file</dd>
+        <dt>-n 5</dt>
+        <dd>Show first 5 lines</dd>
+      </dl>
+    </section>
+
+    <section id="tail">
+      <h3>tail</h3>
+      <p>Show last 10 lines</p>
+      <div class="code-group">
+        <pre data-copy><code>tail [DIR]/filename</code></pre>
+        <pre data-copy><code>tail file1 file2</code></pre>
+        <pre data-copy><code>tail -n Num [DIR]/filename</code></pre>
+        <pre data-copy><code>tail -f [DIR]/filename</code></pre>
+      </div>
+      <dl>
+        <dt>file1 file2</dt>
+        <dd>Show Last 10 lines of each file</dd>
+        <dt>-n 5</dt>
+        <dd>Last 5 lines</dd>
+        <dt>-f</dt>
+        <dd>Follow new lines in real time</dd>
+      </dl>
+    </section>
+
+  </section>
+
+
+
+  <section id="path-and-pattern-shortcuts">
+    <h2>Path & Pattern Shortcuts</h2>
+
+    <nav>
+      <a href="#wildcard">Wildcard</a>
+      <a href="#brace-expansion">Brace Expansion</a>
+      <a href="#path-shortcut">Path Shortcut</a>
+    </nav>
+
+    <section id="wildcard">
+      <h3>Wildcard</h3>
+      <p>Special character used to match multiple files or directories without typing their exact names</p>
+      <dl>
+        <dt>*</dt>
+        <dd>Matches zero or more characters</dd>
+        <dt>*.txt</dt>
+        <dd>a.txt, b.txt, hello.txt (all .txt files)</dd>
+      </dl>
+      <dl>
+        <dt>?</dt>
+        <dd>Matches exactly one character</dd>
+        <dt>file?.txt</dt>
+        <dd>file1.txt, fileA.txt</dd>
+      </dl>
+      <dl>
+        <dt>[]</dt>
+        <dd>Matches any character in the set</dd>
+        <dt>file[12].txt</dt>
+        <dd>file1.txt or file2.txt</dd>
+      </dl>
+      <dl>
+        <dt>[! ]</dt>
+        <dd>Matches any character not in the set</dd>
+        <dt>file[!1].txt</dt>
+        <dd>file2.txt, file3.txt (anything except 1)</dd>
+      </dl>
+    </section>
+
+    <section id="brace-expansion">
+      <h3>Brace Expansion</h3>
+      <p>Shell feature that generates multiple strings from a pattern using {}</p>
+      <dl>
+        <dt>echo file{1,2,3}.txt</dt>
+        <dd>file1.txt file2.txt file3.txt</dd>
+        <dt>touch file{1..5}.txt</dt>
+        <dd>Creates file1.txt to file5.txt at once</dd>
+      </dl>
+    </section>
+
+    <section id="path-shortcut">
+      <h3>Path Shortcut</h3>
+      <p>Way to refer to a long file or directory path with a shorter alias</p>
+      <dl>
+        <dt>.</dt>
+        <dd>Current directory (stays in the same place)</dd>
+        <dt>..</dt>
+        <dd>Parent directory (go up one level)</dd>
+        <dt>~</dt>
+        <dd>Home directory (/data/data/com.termux/files/home)</dd>
+        <dt>-</dt>
+        <dd>Previous directory (where you were last, used with cd -)</dd>
+      </dl>
+    </section>
+
+  </section>
+
+
+
+  <section id="text-editing">
+    <h2>Text Editing</h2>
+
+    <nav>
+      <a href="#nano">nano</a>
+      <a href="#vim">vim</a>
+    </nav>
+
+    <section
+      id="nano"
+      style="width: 100%;"
+    >
+      <h3>nano</h3>
+      <div class="code-group">
+        <pre data-copy><code>pkg install nano</code></pre>
+        <pre data-copy><code>nano [DIR]/filename</code></pre>
+      </div>
+    </section>
+
+    <section
+      id="vim"
+      style="width: 100%; margin-top: 48px;"
+    >
+      <h3>vim</h3>
+      <p>Vim is more powerful than nano</p>
+      <div class="code-group">
+        <pre data-copy><code>pkg install vim</code></pre>
+        <pre data-copy><code>vim [DIR]/filename</code></pre>
+      </div>
+      <p>Vim has different modes, and the keys do different things depending on the mode</p>
+      <dl>
+        <dt>Normal</dt>
+        <dd>Move, delete, copy, search</dd>
+        <dt>Insert</dt>
+        <dd>Type text</dd>
+        <dt>Command-line</dt>
+        <dd>Save, quit, search/replace</dd>
+      </dl>
+
+      <section>
+        <h4>Insert text (Insert mode)</h4>
+        <dl>
+          <dt>i</dt>
+          <dd>Insert at cursor</dd>
+          <dt>I</dt>
+          <dd>Insert at beginning of line</dd>
+          <dt>a</dt>
+          <dd>Insert after cursor</dd>
+          <dt>A</dt>
+          <dd>Insert at end of line</dd>
+          <dt>o</dt>
+          <dd>Open a new line below</dd>
+          <dt>O</dt>
+          <dd>Open a new line below</dd>
+        </dl>
+        <p>Type normally while in insert mode</p>
+        <p>Press Esc to go back to normal mode</p>
+      </section>
+
+      <section>
+        <h4>Move around (Normal mode)</h4>
+        <dl>
+          <dt>h</dt>
+          <dd>← left</dd>
+          <dt>j</dt>
+          <dd>↓ down</dd>
+          <dt>k</dt>
+          <dd>↑ up</dd>
+          <dt>l</dt>
+          <dd>→ right</dd>
+          <dt>0</dt>
+          <dd>Beginning of line</dd>
+          <dt>$</dt>
+          <dd>End of line</dd>
+          <dt>gg</dt>
+          <dd>Top of file</dd>
+          <dt>G</dt>
+          <dd>Bottom of file</dd>
+        </dl>
+        <p>You can also use arrow keys in Termux if it’s easie</p>
+      </section>
+
+      <section>
+        <h4>Delete / Copy / Paste</h4>
+        <dl>
+          <dt>x</dt>
+          <dd>Delete character</dd>
+          <dt>dd</dt>
+          <dd>Delete line</dd>
+          <dt>yy</dt>
+          <dd>Copy line</dd>
+          <dt>p</dt>
+          <dd>Paste below cursor</dd>
+          <dt>P</dt>
+          <dd>Paste above cursor</dd>
+        </dl>
+      </section>
+
+      <section>
+        <h4>Undo / Redo</h4>
+        <dl>
+          <dt>u</dt>
+          <dd>undo</dd>
+          <dt>Ctrl + r</dt>
+          <dd>redo</dd>
+        </dl>
+      </section>
+
+      <section>
+        <h4>Save and quit (Command-line mode)</h4>
+        <dl>
+          <dt>:w</dt>
+          <dd>Save</dd>
+          <dt>:q</dt>
+          <dd>Quit</dd>
+          <dt>:wq</dt>
+          <dd>Save and quit</dd>
+          <dt>:q!</dt>
+          <dd>Quit without saving</dd>
+        </dl>
+      </section>
+
+      <section>
+        <h4>Search and replace</h4>
+        <dl>
+          <dt>/text → press Enter → n for next, N for previous</dt>
+          <dd>Search</dd>
+          <dt>:s/old/new/</dt>
+          <dd>Replace in line</dd>
+          <dt>:%s/old/new/g</dt>
+          <dd>Replace in whole file</dd>
+        </dl>
+      </section>
+
+    </section>
+
+  </section>
+
+
+
+  <section id="package-management">
+    <h2>Package Management</h2>
+
+    <nav>
+      <a href="#pkg-search">Search</a>
+      <a href="#pkg-install">Install</a>
+      <a href="#pkg-update">Update</a>
+      <a href="#pkg-uninstall">Uninstall</a>
+      <a href="#pkg-list-installed">List installed</a>
+      <a href="#pkg-list-all">Available package list</a>
+      <a href="#pkg-show">Check package details</a>
+    </nav>
+
+    <section id="pkg-search">
+      <h3>Search</h3>
+      <p>Search packages</p>
+      <pre data-copy><code>pkg search &lt;package&gt;</code></pre>
+      <dl>
+        <dt>pkg search python</dt>
+        <dd>Lists packages with “python” in the name or description</dd>
+      </dl>
+    </section>
+
+    <section id="pkg-install">
+      <h3>Install</h3>
+      <p>Install packages</p>
+      <div class="code-group">
+        <pre data-copy><code>pkg install &lt;package&gt;</code></pre>
+        <pre data-copy><code>pkg install pkg1 pkg2 pkg3</code></pre>
+      </div>
+      <dl>
+        <dt>pkg1 pkg2 pkg3</dt>
+        <dd>Install multiple packages</dd>
+      </dl>
+    </section>
+
+    <section id="pkg-update">
+      <h3>Update</h3>
+      <p>Update and upgrade packages</p>
+      <div class="code-group">
+        <pre data-copy><code>pkg update</code></pre>
+        <pre data-copy><code>pkg upgrade</code></pre>
+        <pre data-copy><code>pkg update && pkg upgrade</code></pre>
+      </div>
+      <dl>
+        <dt>update</dt>
+        <dd>Refresh package list</dd>
+        <dt>upgrade</dt>
+        <dd>Upgrade installed packages to newest versions</dd>
+        <dt>pkg update && pkg upgrade</dt>
+        <dd>Refresh list & upgrade packages</dd>
+      </dl>
+    </section>
+
+    <section id="pkg-uninstall">
+      <h3>Uninstall</h3>
+      <p>Uninstall packages</p>
+      <div class="code-group">
+        <pre data-copy><code>pkg uninstall &lt;package&gt;</code></pre>
+        <pre data-copy><code>pkg uninstall pkg1 pkg2 pkg3</code></pre>
+      </div>
+      <dl>
+        <dt>pkg1 pkg2 pkg3</dt>
+        <dd>Uninstall multiple packages</dd>
+      </dl>
+    </section>
+
+    <section id="pkg-list-installed">
+      <h3>List installed</h3>
+      <p>Lists all installed packages</p>
+      <pre data-copy><code>pkg list-installed</code></pre>
+    </section>
+
+    <section id="pkg-list-all">
+      <h3>Available package list</h3>
+      <p>List all available packages</p>
+      <pre data-copy><code>pkg list-all</code></pre>
+    </section>
+
+    <section id="pkg-show">
+      <h3>Check package details</h3>
+      <p>Display info about an installed package (version, description, dependencies)</p>
+      <pre data-copy><code>pkg show &lt;package&gt;</code></pre>
+    </section>
+
+  </section>
+
+
+
+  <section id="restrictions-permissions">
+    <h2>Restrictions / Permissions</h2>
+
+    <nav>
+      <a href="#chmod">chmod</a>
+      <a href="#termux-setup-storage">termux-setup-storage</a>
+      <a href="#termux-wake-lock">termux-wake-lock</a>
+    </nav>
+
+    <section id="chmod">
+      <h3>chmod</h3>
+      <p>Makes a script file executable</p>
+      <p>Required for .sh scripts and Termux Widget scripts</p>
+      <div class="code-group">
+        <pre data-copy><code>chmod +x filename</code></pre>
+        <pre data-copy><code>chmod -R +x [DIR]</code></pre>
+      </div>
+      <dl>
+        <dt>+x</dt>
+        <dd>Adds execute permission</dd>
+        <dt>-R</dt>
+        <dd>All files and subdirectories</dd>
+      </dl>
+    </section>
+
+    <section id="termux-setup-storage">
+      <h3>termux-setup-storage</h3>
+      <p>Enable Android storage access</p>
+      <pre data-copy><code>termux-setup-storage</code></pre>
+      <p>Required to access:</p>
+      <ul>
+        <li>Downloads</li>
+        <li>DCIM</li>
+        <li>shared storage</li>
+        <li>/sdcard paths</li>
+      </ul>
+    </section>
+
+    <section id="termux-wake-lock">
+      <h3>termux-wake-lock</h3>
+      <p>It keeps the CPU awake so your processes don’t get paused or killed when the screen turns off</p>
+      <div class="code-group">
+        <pre data-copy><code>termux-wake-lock</code></pre>
+        <pre data-copy><code>termux-wake-unlock</code></pre>
+      </div>
+      <dl>
+        <dt>termux-wake-lock</dt>
+        <dd>Enable wake lock</dd>
+        <dt>termux-wake-unlock</dt>
+        <dd>Disable wake lock</dd>
+      </dl>
+    </section>
+
+  </section>
+
+
+
+  <section id="exit-session">
+    <h2>Exit / Session</h2>
+
+    <nav>
+      <a href="#exit">exit</a>
+      <a href="#ctrl+c">Ctrl + C</a>
+      <a href="#ctrl+z">Ctrl + Z</a>
+      <a href="#command-&">command &</a>
+      <a href="#jobs">jobs</a>
+      <a href="#fg">fg</a>
+      <a href="#bg">bg</a>
+      <a href="#exec">exec</a>
+    </nav>
+
+    <section id="exit">
+      <h3>exit</h3>
+      <p>Exit current session</p>
+      <div class="code-group">
+        <pre data-copy><code>exit</code></pre>
+        <pre data-copy><code>logout</code></pre>
+      </div>
+    </section>
+
+    <section id="ctrl+c">
+      <h3>Ctrl + C</h3>
+      <p>Stop a running command (interrupt)</p>
+      <pre data-copy><code>Ctrl + C</code></pre>
+    </section>
+
+    <section id="ctrl+z">
+      <h3>Ctrl + Z</h3>
+      <p>Suspend current process (pause)</p>
+      <pre data-copy><code>Ctrl + Z</code></pre>
+    </section>
+
+    <section id="command-&">
+      <h3>command &</h3>
+      <p>Run command in background</p>
+      <p> </p>
+      <pre data-copy><code>npm run dev &</code></pre>
+      <dl>
+        <dt>npm run dev &</dt>
+        <dd>Runs without blocking the terminal</dd>
+      </dl>
+    </section>
+
+    <section id="jobs">
+      <h3>jobs</h3>
+      <p>Show background jobs</p>
+      <p>Lists suspended/background tasks</p>
+      <pre data-copy><code>jobs</code></pre>
+    </section>
+
+    <section id="fg">
+      <h3>fg</h3>
+      <p>Foreground (bring back to active)</p>
+      <pre data-copy><code>fg</code></pre>
+    </section>
+
+    <section id="bg">
+      <h3>bg</h3>
+      <p>Background (resume in background)</p>
+      <pre data-copy><code>bg</code></pre>
+    </section>
+
+    <section id="exec">
+      <h3>exec</h3>
+      <p>Reloads the shell</p>
+      <pre data-copy><code>exec bash</code></pre>
+    </section>
+
+  </section>
+
+</main>
+
+
+
+<footer>
+  <p class="license"></p>
+</footer>
+  
+<script src="script.js"></script>
+</body>
+</html>

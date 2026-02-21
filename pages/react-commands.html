@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="email=no, telephone=no, address=no">
+
+
+  <title>Termux Commands – Quick Reference</title>
+  <meta name="description" content="Quick guide to my most used Termux commands.">
+
+
+  <meta property="og:url" content="https://termux-commands.pages.dev/">
+  <meta property="og:title" content="Termux Commands – Quick Reference">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Quick guide to my most used Termux commands.">
+  <meta property="og:image" content="https://termux-commands.pages.dev/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="">
+
+  <meta property="og:site_name" content="Termux Commands – Complete Reference">
+  <meta property="og:locale" content="en_US">
+
+
+  <link rel="canonical" href="https://termux-commands.pages.dev/">
+
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+
+
+
+
+<body>
+
+<header>
+  <h1>Termux React Commands</h1>
+  <nav class="internal-link">
+    <ul>
+      <li><a href="#npm-environment">Node.js / npm Environment</a></li>
+      <li><a href="#create-project">Create a React Project</a></li>
+      <li><a href="#start-server">Start the Development Server</a></li>
+      <li><a href="#build">Building React Projects</a></li>
+    </ul>
+  </nav>
+
+  <nav class="external-link">
+    <h2>Quick Reference（External）</h2>
+    <ul>
+      <li><a href="../index.html">Termux Commands</a></li>
+      <li><a href="local-server.html">Local Server</a></li>
+      <li><a href="git-commands.html">Git Commands</a></li>
+      <li><a href="shell-scripts.html">Shell Scripts</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+
+<main>
+
+  <section id="npm-environment">
+    <h2>Node.js / npm Environment</h2>
+
+    <section>
+      <h3>install Node.js</h3>
+      <pre data-copy><code>pkg install nodejs</code></pre>
+    </section>
+
+    <section>
+      <h3>Check versions</h3>
+      <pre data-copy><code>node -v
+npm -v</code></pre>
+    </section>
+
+  </section>
+
+
+
+  <section id="create-project">
+    <h2>Create a React Project</h2>
+
+    <nav>
+      <a href="#create-vite-react">Vite + React</a>
+      <a href="#create-cra">CRA</a>
+    </nav>
+
+    <section id="create-vite-react">    
+      <h3>Vite + React (recommended)</h3>
+      <p>Vite is fast, lightweight, and supports hot reloading</p>
+      <div class="code-group">
+        <pre data-copy><code>npm create vite@latest &lt;projectname&gt;</code></pre>
+        <pre data-copy><code>cd &lt;projectname&gt;
+npm install</code></pre>
+      </div>
+      <dl>
+        <dt>npm create vite@latest</dt>
+        <dd>Framework: React<br>Variant: JavaScript or TypeScript</dd>
+        <dt>npm install</dt>
+        <dd>Go to your project folder and install dependencies</dd>
+      </dl>
+    </section>
+
+    <section id="create-cra">
+      <h3>Create React App (CRA)</h3>
+      <p>Slightly heavier but works similarly</p>
+      <pre data-copy><code>npx create-react-app myapp
+cd myapp
+npm install</code></pre>
+    </section>
+
+  </section>
+
+
+
+  <section id="start-server">
+    <h2>Start the Development Server</h2>
+
+    <nav>
+      <a href="#start-vite">Vite + React</a>
+      <a href="#start-cra">CRA</a>
+    </nav>
+
+    <section id="start-vite">
+      <h3>Vite + React</h3>
+      <div class="code-group">
+        <pre data-copy><code>npm run dev</code></pre>
+        <pre data-copy><code>npm run dev &</code></pre>
+        <pre data-copy><code>http://localhost:5173</code></pre>
+      </div>
+      <dl>
+        <dt>npm run dev</dt>
+        <dd>http://localhost:5173（Default port is 5173）<br>Stop with: Ctrl + C</dd>
+        <dt>npm run dev &</dt>
+        <dd>Run in background<br>Stop with: jobs → fg → Ctrl+C or kill PID</dd>
+      </dl>
+
+      <section>
+        <h4>LAN Access</h4>
+        <p>To allow other devices on the same network</p>
+        <div class="code-group">
+          <pre data-copy><code>npm run dev -- --host</code></pre>
+          <pre data-copy><code>npm run dev -- --host -port &lt;port&gt;</code></pre>
+          <pre data-copy><code>ip addr</code></pre>
+          <pre data-copy><code>http://192.168.x.x:5173</code></pre>
+        </div>
+        <dl>
+          <dt>--host</dt>
+          <dd>Access http://x.x.x.x:5173 from another device</dd>
+          <dt>--port</dt>
+          <dd>Safe range for dev servers: 3000–9000</dd>
+          <dt>ip addr</dt>
+          <dd>Find your Termux device IP</dd>
+        </dl>
+      </section>
+
+    </section>
+
+    <section id="start-cra">
+      <h3>CRA</h3>
+      <div class="code-group">
+        <pre data-copy><code>npm start</code></pre>
+        <pre data-copy><code>npm start &</code></pre>
+        <pre data-copy><code>http://localhost:3000</code></pre>
+      </div>
+      <dl>
+        <dt>npm start</dt>
+        <dd>http://localhost:3000（Default port is 3000）<br>Stop with: Ctrl + C</dd>
+        <dt>npm run dev &</dt>
+        <dd>Run in background<br>Stop with: jobs → fg → Ctrl+C or kill PID</dd>
+      </dl>
+
+      <section>
+        <h4>LAN Access</h4>
+        <p>To allow other devices on the same network</p>
+        <div class="code-group">
+          <pre data-copy><code>HOST=0.0.0.0 npm start</code></pre>
+          <pre data-copy><code>HOST=0.0.0.0 PORT=&lt;port&gt; npm start</code></pre>
+          <pre data-copy><code>ip addr</code></pre>
+          <pre data-copy><code>http://192.168.x.x:3000</code></pre>
+        </div>
+        <dl>
+          <dt>HOST=0.0.0.0 npm start</dt>
+          <dd>Access http://x.x.x.x:3000 from another device</dd>
+          <dt>PORT=&lt;port&gt;</dt>
+          <dd>Safe range for dev servers: 3000–9000</dd>
+          <dt>ip addr</dt>
+          <dd>Find your Termux device IP</dd>
+        </dl>
+      </section>
+
+    </section>
+
+  </section>
+
+
+
+  <section id="build">
+    <h2>Building React Projects</h2>
+
+    <nav>
+      <a href="#build-vite">Vite + React</a>
+      <a href="#build-cra">CRA</a>
+    </nav>
+
+    <p>development code (JSX, modules, imports, etc.) and turns it into plain HTML, CSS, and JS</p>
+    <pre data-copy><code>cd &lt;project-folder&gt;</code></pre>
+    <dl style="margin-bottom: 32px">
+      <dt>cd &lt;project-folder&gt;</dt>
+      <dd>Go to the directory containing package.json</dd>
+    </dl>
+
+    <section id="build-vite">
+      <h3>Vite + React</h3>
+      <div class="code-group">
+        <pre data-copy><code>npm run build</code></pre>
+        <pre data-copy><code>npm run preview</code></pre>
+        <pre data-copy><code>http://localhost:4173</code></pre>
+      </div>
+      <dl>
+        <dt>npm run build</dt>
+        <dd>By default, Vite will create a dist/ folder with all static files</dd>
+        <dt>npm run preview</dt>
+        <dd>Runs a local server to preview the production build<br>http://localhost:4173 (Vite default)</dd>
+        
+      </dl>
+    </section>
+
+    <section id="build-cra">
+      <h3>CRA</h3>
+      <div class="code-group">
+        <pre data-copy><code>npm run build</code></pre>
+        <pre data-copy><code>npm run preview</code></pre>
+        <pre data-copy><code>http://localhost:4173</code></pre>
+      </div>
+      <dl>
+        <dt>npm run build</dt>
+        <dd>Generates a build/ folder with production files</dd>
+      </dl>
+
+      <section>
+        <h4>Serve the Build Locally</h4>
+        <div class="code-group">
+          <pre data-copy><code>npm install -g serve</code></pre>
+          <pre data-copy><code>serve -s build</code></pre>
+          <pre data-copy><code>http://localhost:3000</code></pre>
+        </div>
+        <dl>
+          <dt>npm install -g serve</dt>
+          <dd>Install serve (if not installed)</dd>
+          <dt>serve -s build</dt>
+          <dd>Starts a local server with production files</dd>
+          <dt>http://localhost:3000</dt>
+          <dd>Default port: 3000</dd>
+        </dl>
+      </section>
+
+    </section>
+
+  </section>
+
+</main>
+
+
+
+<footer>
+  <p class="license"></p>
+</footer>
+  
+<script src="../script.js"></script>
+</body>
+</html>

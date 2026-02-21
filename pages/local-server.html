@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="email=no, telephone=no, address=no">
+
+
+  <title>Termux Commands – Quick Reference</title>
+  <meta name="description" content="Quick guide to my most used Termux commands.">
+
+
+  <meta property="og:url" content="https://termux-commands.pages.dev/">
+  <meta property="og:title" content="Termux Commands – Quick Reference">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Quick guide to my most used Termux commands.">
+  <meta property="og:image" content="https://termux-commands.pages.dev/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="">
+
+  <meta property="og:site_name" content="Termux Commands – Complete Reference">
+  <meta property="og:locale" content="en_US">
+
+
+  <link rel="canonical" href="https://termux-commands.pages.dev/">
+
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+
+
+
+
+<body>
+
+<header>
+  <h1>Termux Local Server</h1>
+  <nav class="internal-link">
+    <ul>
+      <li><a href="#python">Python</a></li>
+      <li><a href="#php">PHP</a></li>
+    </ul>
+  </nav>
+
+  <nav class="external-link">
+    <h2>Quick Reference（External）</h2>
+    <ul>
+      <li><a href="../index.html">Termux Commands</a></li>
+      <li><a href="react-commands.html">React Commands</a></li>
+      <li><a href="git-commands.html">Git Commands</a></li>
+      <li><a href="shell-scripts.html">Shell Scripts</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+
+<main>
+
+  <section id="python">
+    <h2>Python</h2>
+
+    <section>
+      <h3>Check if Python is installed</h3>
+      <div class="code-group">
+        <pre data-copy><code>python --version</code></pre>
+        <pre data-copy><code>pkg install python</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h3>Start the server</h3>
+      <p>cd project → go to project folder before starting server</p>
+      <div class="code-group">
+        <pre data-copy><code>python -m http.server 8000</code></pre>
+        <pre data-copy><code>http://localhost:8000</code></pre>
+      </div>
+      <dl>
+        <dt>You should see</dt>
+        <dd>Serving HTTP on 0.0.0.0 port 8000</dd>
+      </dl>
+
+      <section>
+        <h4>Access from another device</h4>
+        <div class="code-group">
+          <pre data-copy><code>ip addr</code></pre>
+          <pre data-copy><code>http://192.168.x.x:8000</code></pre>
+        </div>
+        <dl>
+          <dt>ip addr</dt>
+          <dd>Check IP</dd>
+        </dl>
+      </section>
+
+    </section>
+
+    <section>
+      <h3>Stop the server</h3>
+      <pre data-copy><code>Ctrl + C</code></pre>
+    </section>
+
+  </section>
+
+
+
+  <section id="php">
+    <h2>PHP</h2>
+
+    <section>
+      <h3>Check if PHP is installed</h3>
+      <div class="code-group">
+        <pre data-copy><code>php -v</code></pre>
+        <pre data-copy><code>pkg install php</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h3>Start the server</h3>
+      <p>cd project → go to project folder before starting server</p>
+      <div class="code-group">
+        <pre data-copy><code>php -S localhost:8000</code></pre>
+        <pre data-copy><code>http://localhost:8000</code></pre>
+      </div>
+
+      <section>
+        <h4>Access from another device</h4>
+        <div class="code-group">
+          <pre data-copy><code>ip addr</code></pre>
+          <pre data-copy><code>http://YOUR_IP:8000</code></pre>
+        </div>
+        <dl>
+          <dt>ip addr</dt>
+          <dd>Check IP</dd>
+        </dl>
+      </section>
+
+    </section>
+
+    <section>
+      <h3>Stop the server</h3>
+      <pre data-copy><code>Ctrl + C</code></pre>
+    </section>
+
+  </section>
+
+</main>
+
+
+
+<footer>
+  <p class="license"></p>
+</footer>
+  
+<script src="../script.js"></script>
+</body>
+</html>
