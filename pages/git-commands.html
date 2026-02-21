@@ -394,7 +394,14 @@ git merge branch_name</code></pre>
 
   <section id="fetch-and-merge">
     <h2>Fetch & Merge</h2>
-    <pre data-copy><code>git pull remote_name branch_name</code></pre>
+    <div class="code-group">
+      <pre data-copy><code>git pull remote_name branch_name</code></pre>
+      <pre data-copy><code>git pull origin main --rebase</code></pre>
+    </div>
+    <dl>
+      <dt>git pull origin main --rebase</dt>
+      <dd>Apply your commits after the remote commits</dd>
+    </dl>
     <ul>
       <li>Get the latest changes from the remote repository and merge them into your local branch</li>
     </ul>
@@ -411,10 +418,26 @@ git merge branch_name</code></pre>
     </div>
     <dl>
       <dt>git push -u origin main</dt>
-      <dd>First time</dd>
+      <dd>First time（Link the local branch to the remote branch）</dd>
       <dt>git push</dt>
       <dd>Second time</dd>
     </dl>
+
+    <section>
+      <h4>Overwrite</h4>
+      <div class="code-group">
+        <pre data-copy><code>git push -u origin main --force</code></pre>
+        <pre data-copy><code>git push -u origin main --force-with-lease</code></pre>
+      </div>
+      <dl>
+        <dt>git push -u origin main --force</dt>
+        <dd>Overwrites the remote branch</dd>
+
+        <dt>git push -u origin main --force-with-lease</dt>
+        <dd>Overwrites only if the remote hasn’t changed</dd>
+      </dl>
+    </section>
+
   </section>
 
 
@@ -426,7 +449,7 @@ git merge branch_name</code></pre>
       <a href="#first-deploy">First Deploy to GitHub</a>
       <a href="#next-deployment">Next Deployment</a>
       <a href="#change-remote-url-and-deploy">Change Remote URL and Deploy</a>
-      <a href="# "> </a>
+      <a href="#force-push">Force Push (Overwrite Remote)</a>
     </nav>
 
     <section id="first-deploy">
@@ -439,6 +462,7 @@ git add .
 git commit -m "first commit"
 git branch -M main
 git remote add origin URL
+git pull origin main --rebase
 git push -u origin main</code></pre>
       <ol>
         <li><a href="#initialize">git init</a></li>
@@ -447,6 +471,7 @@ git push -u origin main</code></pre>
         <li><a href="#commit-changes">git commit</a></li>
         <li><a href="#rename-branch">git branch</a></li>
         <li><a href="#remote-management">git remote</a></li>
+        <li><a href="#fetch-and-merge">git pull</a></li>
         <li><a href="#push-to-remote">git push</a></li>
       </ol>
     </section>
@@ -455,7 +480,7 @@ git push -u origin main</code></pre>
       <h3>Next Deployment</h3>
       <pre data-copy><code>git add .
 git commit -m "update"
-git pull
+git pull --rebase
 git push</code></pre>
       <ol>
         <li><a href="#stage-files">git add</a></li>
@@ -468,11 +493,9 @@ git push</code></pre>
     <section id="change-remote-url-and-deploy">
       <h3>Change Remote URL and Deploy</h3>
       <pre data-copy><code>git remote set-url origin URL
-git remote -v
-
 git add .
 git commit -m "update"
-git pull origin main
+git pull origin main --rebase
 git push -u origin main</code></pre>
       <ol>
         <li><a href="#remote-management">git remote</a></li>
@@ -483,11 +506,15 @@ git push -u origin main</code></pre>
       </ol>
     </section>
 
-    <section>
-      <h3>Overwrite</h3>
-      <pre data-copy><code> </code></pre>
+    <section id="force-push">
+      <h3>Force Push (Overwrite Remote)</h3>
+      <pre data-copy><code>git add .
+git commit -m "update (force push)"
+git push --force</code></pre>
       <ol>
-        <li><a href="# "> </a></li>
+        <li><a href="#stage-files">git add</a></li>
+        <li><a href="#commit-changes">git commit</a></li>
+        <li><a href="#push-to-remote">git push</a></li>
       </ol>
     </section>
 
