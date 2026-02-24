@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="email=no, telephone=no, address=no">
+
+
+  <title>Termux Commands – Quick Reference</title>
+  <meta name="description" content="Quick guide to my most used Termux commands.">
+
+
+  <meta property="og:url" content="https://termux-commands.pages.dev/">
+  <meta property="og:title" content="Termux Commands – Quick Reference">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Quick guide to my most used Termux commands.">
+  <meta property="og:image" content="https://termux-commands.pages.dev/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="">
+
+  <meta property="og:site_name" content="Termux Commands – Complete Reference">
+  <meta property="og:locale" content="en_US">
+
+
+  <link rel="canonical" href="https://termux-commands.pages.dev/">
+
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+
+
+
+
+<body>
+
+<header>
+  <h1>Termux Script Syntax</h1>
+  <nav class="internal-link">
+    <ul>
+      <li><a href="#variable">variable</a></li>
+      <li><a href="#if">if</a></li>
+      <li><a href="#for">for</a></li>
+      <li><a href="#while">while</a></li>
+      <li><a href="#case">case</a></li>
+      <li><a href="#argument">argument</a></li>
+      <li><a href="#function">function</a></li>
+      <li><a href="#comment">comment</a></li>
+    </ul>
+  </nav>
+
+  <nav class="external-link">
+    <h2>Quick Reference（External）</h2>
+    <ul>
+      <li><a href="../index.html">Termux Commands</a></li>
+      <li><a href="local-server.html">Local Server</a></li>
+      <li><a href="react-commands.html">React Commands</a></li>
+      <li><a href="git-commands.html">Git Commands</a></li>
+      <li><a href="shell-scripting-and-aliases.html">Shell Scripting & Aliases</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+
+<main>
+
+  <section id="variable">
+    <h2>variable</h2>
+    <pre data-copy><code>name="Lanlanwi"
+echo $name</code></pre>
+  </section>
+
+
+
+  <section id="if">
+    <h2>if</h2>
+    <div class="code-group">
+      <pre data-copy><code>x=1
+
+if [ $x -eq 1 ]; then
+  echo "It is 1"
+fi</code></pre>
+      <pre data-copy><code>x=2
+
+if [ $x -eq 1 ]; then
+  echo "It is 1"
+elif [ $x -eq 2 ]; then
+  echo "It is 2"
+else
+  echo "Something else"
+fi</code></pre>
+    </div>
+    <ul>
+      <li>
+        Number comparisons
+        <ul>
+          <li>-eq → equal（==）</li>
+          <li>-ne → not equal（!=）</li>
+          <li>-gt → greater than（&gt;）</li>
+          <li>-lt → less than（&lt;）</li>
+        </ul>
+      </li>
+      <li>
+        String comparisons
+        <ul>
+          <li>=</li>
+          <li>!=</li>
+        </ul>
+      </li>
+      <li>
+        File checks
+        <ul>
+          <li>-f → file exists</li>
+          <li>-d → directory exists</li>
+        </ul>
+      </li>
+    </ul>
+    <pre data-copy><code>if [ -f test.txt ]; then</code></pre>
+  </section>
+
+
+
+  <section id="for">
+    <h2>for</h2>
+    <div class="code-group">
+      <pre data-copy><code>for i in 1 2 3
+do
+  echo $i
+done</code></pre>
+      <pre data-copy><code>for file in *.txt
+do
+  echo $file
+done</code></pre>
+      <pre data-copy><code>for i in {1..30}
+do
+  echo $i
+done</code></pre>
+      <pre data-copy><code>for ((i=0; i&lt;5; i++))
+do
+  echo $i
+done</code></pre>
+    </div>
+    <div class="code-group" style="margin-top: 32px;">
+      <pre data-copy><code>for i in {1..30}
+do
+  if [ $i -eq 5 ]; then
+    break
+  fi
+  echo $i
+done</code></pre>
+      <pre data-copy><code>for i in {1..10}
+do
+  if [ $i -eq 5 ]; then
+    continue
+  fi
+  echo $i
+done</code></pre>
+    </div>
+  </section>
+
+
+
+  <section id="while">
+    <h2>while</h2>
+    <div class="code-group">
+      <pre data-copy><code>i=5
+
+while [ $i -gt 0 ]
+do
+  echo $i
+  i=$((i-1))
+done</code></pre>
+      <pre data-copy><code>while [ -f test.txt ]
+do
+  echo "File exists"
+  sleep 2
+done</code></pre>
+    </div>
+    <ul>
+      <li>As long as test.txt exists</li>
+      <li>Print a message every 2 seconds</li>
+    </ul>
+  </section>
+
+
+
+  <section id="case">
+    <h2>case</h2>
+    <div class="code-group">
+      <pre data-copy><code>read -p "Enter something: " input
+
+case "$input" in
+  hello)
+    echo "Hello"
+    ;;
+  bye)
+    echo "Goodbye"
+    ;;
+  *)
+    echo "I don't understand"
+    ;;
+esac</code></pre>
+      <pre data-copy><code>case "$file" in
+  *.txt)
+    echo "Text file"
+    ;;
+  *.jpg)
+    echo "Image file"
+    ;;
+esac</code></pre>
+    </div>
+  </section>
+
+
+
+  <section id="argument">
+    <h2>argument</h2>
+    <div class="code-group">
+      <pre data-copy><code>./script.sh hello 123</code></pre>
+      <pre data-copy><code>echo $1
+echo $2</code></pre>
+    </div>
+    <ul>
+      <li>hello → $1</li>
+      <li>123 → $2</li>
+    </ul>
+  </section>
+
+
+
+  <section id="function">
+    <h2>function</h2>
+    <div class="code-group">
+      <pre data-copy><code>myfunc() {
+  echo "Hello"
+  echo "Hello"
+}
+
+myfunc</code></pre>
+      <pre data-copy><code>greet() {
+  echo "Hello $1"
+  echo "Hi $2"
+}
+
+greet Lanlanwi Sheban</code></pre>
+    </div>
+    <ul>
+      <li>Lanlanwi → $1</li>
+      <li>Sheban → $2</li>
+    </ul>
+  </section>
+
+
+
+  <section id="comment">
+    <h2>comment</h2>
+    <pre data-copy><code># Comment</code></pre>
+  </section>
+
+</main>
+
+
+
+<footer>
+  <p class="license"></p>
+</footer>
+  
+<script src="../script.js"></script>
+</body>
+</html>

@@ -52,6 +52,7 @@
       <li><a href="#package-management">Package Management</a></li>
       <li><a href="#restrictions-permissions">Restrictions / Permissions</a></li>
       <li><a href="#exit-session">Exit / Session</a></li>
+      <li><a href="#combine-multiple-commands">Combine multiple commands</a></li>
     </ul>
   </nav>
 
@@ -61,7 +62,8 @@
       <li><a href="pages/local-server.html">Local Server</a></li>
       <li><a href="pages/react-commands.html">React Commands</a></li>
       <li><a href="pages/git-commands.html">Git Commands</a></li>
-      <li><a href="pages/shell-scripts.html">Shell Scripts</a></li>
+      <li><a href="pages/script-syntax.html">Script Syntax</a></li>
+      <li><a href="pages/shell-scripting-and-aliases.html">Shell Scripting & Aliases</a></li>
     </ul>
   </nav>
 </header>
@@ -806,6 +808,7 @@
       <a href="#fg">fg</a>
       <a href="#bg">bg</a>
       <a href="#exec">exec</a>
+      <a href="#tmux">tmux</a>
     </nav>
 
     <section id="exit">
@@ -863,6 +866,147 @@
       <h3>exec</h3>
       <p>Reloads the shell</p>
       <pre data-copy><code>exec bash</code></pre>
+    </section>
+
+    <section id="tmux">
+      <h3>tmux</h3>
+
+      <section>
+        <h4>Install tmux</h4>
+        <pre data-copy><code>pkg install tmux</code></pre>
+      </section>
+
+      <section>
+        <h4>Start tmux</h4>
+        <div class="code-group">
+          <pre data-copy><code>tmux</code></pre>
+          <pre data-copy><code>tmux new -s mysession</code></pre>
+        </div>
+        <dl>
+          <dt>tmux new -s mysession</dt>
+          <dd>Start a named session</dd>
+        </dl>
+      </section>
+
+      <section>
+        <h4>Detach (run in background)</h4>
+        <pre data-copy><code>Ctrl + b → d</code></pre>
+        <ul>
+          <li>This keeps everything running in the background</li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>Reattach (come back)</h4>
+        <div class="code-group">
+          <pre data-copy><code>tmux attach</code></pre>
+          <pre data-copy><code>tmux attach -t mysession</code></pre>
+          <pre data-copy><code>tmux a</code></pre>
+        </div>
+        <dl>
+          <dt>tmux attach -t mysession</dt>
+          <dd>If you used a name</dd>
+        </dl>
+      </section>
+
+      <section>
+        <h4>Create a new window</h4>
+        <pre data-copy><code>Ctrl + b → c</code></pre>
+      </section>
+
+      <section>
+        <h4>Switch windows</h4>
+        <div class="code-group">
+          <pre data-copy><code>Ctrl + b → n</code></pre>
+          <pre data-copy><code>Ctrl + b → p</code></pre>
+        </div>
+        <dl>
+          <dt>Ctrl + b → n</dt>
+          <dd>Next window</dd>
+          <dt>Ctrl + b → p</dt>
+          <dd>Previous window</dd>
+        </dl>
+      </section>
+
+      <section>
+        <h4>Split the screen</h4>
+        <div class="code-group">
+          <pre data-copy><code>Ctrl + b → "</code></pre>
+          <pre data-copy><code>Ctrl + b → %</code></pre>
+        </div>
+        <dl>
+          <dt>Ctrl + b → "</dt>
+          <dd>Horizontal split</dd>
+          <dt>Ctrl + b → %</dt>
+          <dd>Vertical split</dd>
+        </dl>
+      </section>
+
+      <section>
+        <h4>Exit tmux</h4>
+        <div class="code-group">
+          <pre data-copy><code>exit</code></pre>
+          <pre data-copy><code>tmux kill-server</code></pre>
+        </div>
+        <dl>
+          <dt>exit</dt>
+          <dd>Inside tmux</dd>
+          <dt>tmux kill-server</dt>
+          <dd>Kill all sessions</dd>
+        </dl>
+      </section>
+
+      <section>
+        <h4>List sessions</h4>
+        <pre data-copy><code>tmux ls</code></pre>
+      </section>
+
+    </section>
+
+  </section>
+
+
+
+  <section id="combine-multiple-commands">
+    <h2>Combine multiple commands</h2>
+
+    <nav>
+      <a href="#and-and">&&</a>
+      <a href="#semicolon">;</a>
+      <a href="#or-or">||</a>
+    </nav>
+
+    <section id="and-and">
+      <h3>&&</h3>
+      <div class="code-group">
+        <pre data-copy><code>command1 && command2</code></pre>
+        <pre data-copy><code>pkg update && pkg upgrade</code></pre>
+      </div>
+      <ul>
+        <li>Run command2 only if command1 succeeds</li>
+      </ul>
+    </section>
+
+    <section id="semicolon">
+      <h3>;</h3>
+      <div class="code-group">
+        <pre data-copy><code>command1 ; command2</code></pre>
+        <pre data-copy><code>echo "Hello" ; echo "World"</code></pre>
+      </div>
+      <ul>
+        <li>Run both commands no matter what (success or failure)</li>
+      </ul>
+    </section>
+
+    <section id="or-or">
+      <h3>||</h3>
+      <div class="code-group">
+        <pre data-copy><code>command1 || command2</code></pre>
+        <pre data-copy><code>mkdir test || echo "Directory already exists"</code></pre>
+      </div>
+      <ul>
+        <li>Run command2 only if command1 fails</li>
+      </ul>
     </section>
 
   </section>

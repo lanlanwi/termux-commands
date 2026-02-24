@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="email=no, telephone=no, address=no">
+
+
+  <title>Termux Commands – Quick Reference</title>
+  <meta name="description" content="Quick guide to my most used Termux commands.">
+
+
+  <meta property="og:url" content="https://termux-commands.pages.dev/">
+  <meta property="og:title" content="Termux Commands – Quick Reference">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="Quick guide to my most used Termux commands.">
+  <meta property="og:image" content="https://termux-commands.pages.dev/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="">
+
+  <meta property="og:site_name" content="Termux Commands – Complete Reference">
+  <meta property="og:locale" content="en_US">
+
+
+  <link rel="canonical" href="https://termux-commands.pages.dev/">
+
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+
+
+
+
+<body>
+
+<header>
+  <h1>Termux Shell Scripting & Aliases</h1>
+  <nav class="internal-link">
+    <ul>
+      <li><a href="#shell-script">Shell Script</a></li>
+      <li><a href="#alias">alias</a></li>
+    </ul>
+  </nav>
+
+  <nav class="external-link">
+    <h2>Quick Reference（External）</h2>
+    <ul>
+      <li><a href="../index.html">Termux Commands</a></li>
+      <li><a href="local-server.html">Local Server</a></li>
+      <li><a href="react-commands.html">React Commands</a></li>
+      <li><a href="git-commands.html">Git Commands</a></li>
+      <li><a href="script-syntax.html">Script Syntax</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+
+<main>
+
+  <section id="shell-script">
+    <h2>Shell Script</h2>
+
+    <nav>
+      <a href="#sh-create">Create the script</a>
+      <a href="#sh-inside-file">Inside the file</a>
+      <a href="#sh-termux-widget">Termux Widget</a>
+    </nav>
+
+    <section id="sh-create">
+      <h3>Create the script</h3>
+      <div class="code-group">
+        <pre data-copy><code>nano script.sh</code></pre>
+        <pre data-copy><code>chmod +x script.sh</code></pre>
+      </div>
+      <dl>
+        <dt>chmod +x script.sh</dt>
+        <dd>Make it executable (required)</dd>
+      </dl>
+    </section>
+
+    <section id="sh-inside-file">
+      <h3>Inside the file</h3>
+      <div class="code-group">
+        <pre data-copy><code>#!/data/data/com.termux/files/usr/bin/bash
+
+echo "Hello"</code></pre>
+        <pre data-copy><code>which bash</code></pre>
+        <pre data-copy><code>pkg install which</code></pre>
+      </div>
+      <dl>
+        <dt>#!/data/data/com.termux/files/usr/bin/bash</dt>
+        <dd>#! is shebang</dd>
+        <dt>which bash</dt>
+        <dd>Get bash path for shebang</dd>
+      </dl>
+    </section>
+
+    <section id="sh-termux-widget">
+      <h3>Termux Widget</h3>
+      <pre data-copy><code>mkdir -p ~/.shortcuts
+mv script.sh ~/.shortcuts/</code></pre>
+      <ul>
+        <li>The widget only reads scripts inside “~/.shortcuts/”</li>
+      </ul>
+    </section>
+
+  </section>
+
+
+
+  <section id="alias">
+    <h2>alias</h2>
+
+    <nav>
+      <a href="#alias-temporary">Temporary alias (current session only)</a>
+      <a href="#alias-permanent">Make it permanent</a>
+      <a href="#alias-view-and-remove">View and Remove</a>
+    </nav>
+
+    <p>An alias lets you create a shortcut for a longer command</p>
+
+    <section id="alias-temporary">
+      <h3>Temporary alias (current session only)</h3>
+      <div class="code-group">
+        <pre data-copy><code>alias name='command'</code></pre>
+        <pre data-copy><code>alias ll='ls -la'</code></pre>
+      </div>
+      <dl>
+        <dt>alias ll='ls -la'</dt>
+        <dd>When you type “ll”
+it will run “ls -la”</dd>
+      </dl>
+      <ul>
+        <li>This will disappear when you close Termux</li>
+      </ul>
+    </section>
+
+    <section id="alias-permanent">
+      <h3>Make it permanent</h3>
+      <div class="code-group">
+        <pre data-copy><code>nano ~/.bashrc</code></pre>
+        <pre data-copy><code>alias ll='ls -la'
+alias la='ls -a'
+alias cls='clear'
+alias update='pkg update && pkg upgrade'</code></pre>
+        <pre data-copy><code>source ~/.bashrc</code></pre>
+      </div>
+      <dl>
+        <dt>nano ~/.bashrc</dt>
+        <dd>Add aliases to your ~/.bashrc file</dd>
+        <dt>source ~/.bashrc</dt>
+        <dd>Apply changes（Or just restart Termux）</dd>
+      </dl>
+    </section>
+
+    <section id="alias-view-and-remove">
+      <h3>View and Remove</h3>
+      <div class="code-group">
+        <pre data-copy><code>alias</code></pre>
+        <pre data-copy><code>unalias name</code></pre>
+      </div>
+      <dl>
+        <dt>alias</dt>
+        <dd>List all aliases</dd>
+        <dt>unalias</dt>
+        <dd>Remove an alias</dd>
+      </dl>
+    </section>
+
+  </section>
+
+</main>
+
+
+
+<footer>
+  <p class="license"></p>
+</footer>
+  
+<script src="../script.js"></script>
+</body>
+</html>
