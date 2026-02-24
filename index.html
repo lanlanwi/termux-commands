@@ -43,7 +43,7 @@
 
 <header>
   <h1>Termux Commands</h1>
-  <nav class="internal-link">
+  <nav class="internal-link" aria-label="Main internal navigation">
     <ul>
       <li><a href="#directory-management">Directory Management</a></li>
       <li><a href="#file-management">File Management</a></li>
@@ -57,7 +57,7 @@
   </nav>
 
   <nav class="external-link">
-    <h2>Quick Reference（External）</h2>
+    <h2>External Links</h2>
     <ul>
       <li><a href="pages/local-server.html">Local Server</a></li>
       <li><a href="pages/react-commands.html">React Commands</a></li>
@@ -79,13 +79,15 @@
   <section id="directory-management">
     <h2>Directory Management</h2>
 
-    <nav>
-      <a href="#pwd">pwd</a>
-      <a href="#ls">ls</a>
-      <a href="#cd">cd</a>
-      <a href="#mkdir">mkdir</a>
-      <a href="#rmdir">rmdir</a>
-      <a href="#tree">tree</a>
+    <nav aria-label="directory-management-navigation">
+      <ul>
+        <li><a href="#pwd">pwd</a></li>
+        <li><a href="#ls">ls</a></li>       
+        <li><a href="#cd">cd</a></li>
+        <li><a href="#mkdir">mkdir</a></li>
+        <li><a href="#rmdir">rmdir</a></li>
+        <li><a href="#tree">tree</a></li>
+      </ul>
     </nav>
 
     <section id="pwd">
@@ -203,16 +205,18 @@
   <section id="file-management">
     <h2>File Management</h2>
 
-    <nav>
-      <a href="#cp">cp</a>
-      <a href="#mv">mv</a>
-      <a href="#rm">rm</a>
-      <a href="#touch">touch</a>
-      <a href="#echo">echo</a>
-      <a href="#cat">cat</a>
-      <a href="#less">less</a>
-      <a href="#head">head</a>
-      <a href="#tail">tail</a>
+    <nav aria-label="file-management-navigation">
+      <ul>
+        <li><a href="#cp">cp</a></li>
+        <li><a href="#mv">mv</a></li>
+        <li><a href="#rm">rm</a></li>
+        <li><a href="#touch">touch</a></li>
+        <li><a href="#echo">echo</a></li>
+        <li><a href="#cat">cat</a></li>
+        <li><a href="#less">less</a></li>
+        <li><a href="#head">head</a></li>
+        <li><a href="#tail">tail</a></li>
+      </ul>
     </nav>
 
     <section id="cp">
@@ -445,10 +449,12 @@
   <section id="path-and-pattern-shortcuts">
     <h2>Path & Pattern Shortcuts</h2>
 
-    <nav>
-      <a href="#wildcard">Wildcard</a>
-      <a href="#brace-expansion">Brace Expansion</a>
-      <a href="#path-shortcut">Path Shortcut</a>
+    <nav aria-label="path-and-pattern-shortcuts-navigation">
+      <ul>
+        <li><a href="#wildcard">Wildcard</a></li>
+        <li><a href="#brace-expansion">Brace Expansion</a></li>
+        <li><a href="#path-shortcut">Path Shortcut</a></li>
+      </ul>
     </nav>
 
     <section id="wildcard">
@@ -513,9 +519,11 @@
   <section id="text-editing">
     <h2>Text Editing</h2>
 
-    <nav>
-      <a href="#nano">nano</a>
-      <a href="#vim">vim</a>
+    <nav aria-label="text-editing-navigation">
+      <ul>
+        <li><a href="#nano">nano</a></li>
+        <li><a href="#vim">vim</a></li>
+      </ul>
     </nav>
 
     <section
@@ -653,14 +661,16 @@
   <section id="package-management">
     <h2>Package Management</h2>
 
-    <nav>
-      <a href="#pkg-search">Search</a>
-      <a href="#pkg-install">Install</a>
-      <a href="#pkg-update">Update</a>
-      <a href="#pkg-uninstall">Uninstall</a>
-      <a href="#pkg-list-installed">List installed</a>
-      <a href="#pkg-list-all">Available package list</a>
-      <a href="#pkg-show">Check package details</a>
+    <nav aria-label="package-management-navigation">
+      <ul>
+        <li><a href="#pkg-search">Search</a></li>
+        <li><a href="#pkg-install">Install</a></li>
+        <li><a href="#pkg-update">Update</a></li>
+        <li><a href="#pkg-uninstall">Uninstall</a></li>
+        <li><a href="#pkg-list-installed">List installed</a></li>
+        <li><a href="#pkg-list-all">Available package list</a></li>
+        <li><a href="#pkg-show">Check package details</a></li>
+      </ul>
     </nav>
 
     <section id="pkg-search">
@@ -742,10 +752,12 @@
   <section id="restrictions-permissions">
     <h2>Restrictions / Permissions</h2>
 
-    <nav>
-      <a href="#chmod">chmod</a>
-      <a href="#termux-setup-storage">termux-setup-storage</a>
-      <a href="#termux-wake-lock">termux-wake-lock</a>
+    <nav aria-label="restriction-permission-navigation">
+      <ul>
+        <li><a href="#chmod">chmod</a></li>
+        <li><a href="#termux-setup-storage">termux-setup-storage</a></li>
+        <li><a href="#termux-wake-lock">termux-wake-lock</a></li>
+      </ul>
     </nav>
 
     <section id="chmod">
@@ -799,16 +811,18 @@
   <section id="exit-session">
     <h2>Exit / Session</h2>
 
-    <nav>
-      <a href="#exit">exit</a>
-      <a href="#ctrl+c">Ctrl + C</a>
-      <a href="#ctrl+z">Ctrl + Z</a>
-      <a href="#command-&">command &</a>
-      <a href="#jobs">jobs</a>
-      <a href="#fg">fg</a>
-      <a href="#bg">bg</a>
-      <a href="#exec">exec</a>
-      <a href="#tmux">tmux</a>
+    <nav aria-label="exit-session-navigation">
+      <ul>
+        <li><a href="#exit">exit</a></li>
+        <li><a href="#ctrl+c">Ctrl + C</a></li>
+        <li><a href="#ctrl+z">Ctrl + Z</a></li>
+        <li><a href="#command-&">command &</a></li>
+        <li><a href="#jobs">jobs</a></li>
+        <li><a href="#fg">fg</a></li>
+        <li><a href="#bg">bg</a></li>
+        <li><a href="#exec">exec</a></li>
+        <li><a href="#tmux">tmux</a></li>
+      </ul>
     </nav>
 
     <section id="exit">
@@ -970,10 +984,12 @@
   <section id="combine-multiple-commands">
     <h2>Combine multiple commands</h2>
 
-    <nav>
-      <a href="#and-and">&&</a>
-      <a href="#semicolon">;</a>
-      <a href="#or-or">||</a>
+    <nav aria-label="combine-multiple-commands-navigation">
+      <ul>
+        <li><a href="#and-and">&&</a></li>
+        <li><a href="#semicolon">;</a></li>
+        <li><a href="#or-or">||</a></li>
+      </ul>
     </nav>
 
     <section id="and-and">

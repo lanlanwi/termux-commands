@@ -207,14 +207,24 @@ main h2 {
     font-size: 32px;
 }
 
-h2 + nav {
+h2 + nav { width: 100%; }
+
+h2 + nav ul {
     display: flex;
     flex-wrap: wrap;
     gap: 4px 16px;
 
     width: 100%;
 
-    margin-bottom: 20px;
+    margin: 0 0 20px;
+    padding: 0;
+}
+
+h2 + nav li {
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
 }
 
 h2 + nav a {
@@ -281,7 +291,7 @@ dl {
     background-color: hsla(0, 0%, 80%, 25%);
 }
 
-dl * {
+dl > * {
     overflow-x: auto;
 
     padding: 3.2px 6.4px;
@@ -298,13 +308,13 @@ dl * {
 
 dl dt { white-space: pre; }
 
-dl :nth-child(2n+1) {
+dl > :nth-child(2n+1) {
     padding-left: none;
     border: 0.5px solid #FFF;
     border-left: none;
 }
 
-dl :nth-child(2n) {
+dl > :nth-child(2n) {
     padding-left: none;
     border: 0.5px solid #FFF;
     border-right: none;
@@ -313,7 +323,22 @@ dl :nth-child(2n) {
 dl > :nth-child(-n+2) { border-top: none; }
 dl > :nth-last-child(-n+2) { border-bottom: none; }
 
+dd ul {
+    margin: 0;
+    padding: 0;
+}
 
+dd ul li {
+    margin: 8px 0;
+
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: 0.8px;
+    word-spacing: 3.2px;
+    border: 1px solid red;
+}
+
+dd ul li:before { content: "・"; }
 
 
 

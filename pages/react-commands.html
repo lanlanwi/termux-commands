@@ -43,19 +43,19 @@
 
 <header>
   <h1>Termux React Commands</h1>
-  <nav class="internal-link">
+  <nav class="internal-link" aria-label="Main internal navigation">
     <ul>
       <li><a href="#npm-environment">Node.js / npm Environment</a></li>
       <li><a href="#create-project">Create a React Project</a></li>
       <li><a href="#start-server">Start the Development Server</a></li>
       <li><a href="#build">Building React Projects</a></li>
-      <li><a href="#deploy-to-github-gh-pages">Deploy to Github（gh-pages）</a></li>
-      <li><a href="#deploy-to-github-github-actions">Deploy to Github（GitHub Actions）</a></li>
+      <li><a href="#deploy-to-github-gh-pages">Deploy to GitHub（gh-pages）</a></li>
+      <li><a href="#deploy-to-github-github-actions">Deploy to GitHub（GitHub Actions）</a></li>
     </ul>
   </nav>
 
   <nav class="external-link">
-    <h2>Quick Reference（External）</h2>
+    <h2>External Links</h2>
     <ul>
       <li><a href="../index.html">Termux Commands</a></li>
       <li><a href="local-server.html">Local Server</a></li>
@@ -91,9 +91,11 @@ npm -v</code></pre>
   <section id="create-project">
     <h2>Create a React Project</h2>
 
-    <nav>
-      <a href="#create-vite-react">Vite + React</a>
-      <a href="#create-cra">CRA</a>
+    <nav aria-label="create-project-navigation">
+      <ul>
+        <li><a href="#create-vite-react">Vite + React</a></li>
+        <li><a href="#create-cra">CRA</a></li>
+      </ul>
     </nav>
 
     <section id="create-vite-react">    
@@ -127,9 +129,11 @@ npm install</code></pre>
   <section id="start-server">
     <h2>Start the Development Server</h2>
 
-    <nav>
-      <a href="#start-vite">Vite + React</a>
-      <a href="#start-cra">CRA</a>
+    <nav aria-label="start-server-navigation">
+      <ul>
+        <li><a href="#start-vite">Vite + React</a></li>
+        <li><a href="#start-cra">CRA</a></li>
+      </ul>
     </nav>
 
     <section id="start-vite">
@@ -159,7 +163,7 @@ npm install</code></pre>
           <dt>--host</dt>
           <dd>Access http://x.x.x.x:5173 from another device</dd>
           <dt>--port</dt>
-          <dd>Safe range for dev servers: 3000–9000</dd>
+          <dd>Common development port range: 3000–9000</dd>
           <dt>ip addr</dt>
           <dd>Find your Termux device IP</dd>
         </dl>
@@ -192,9 +196,9 @@ npm install</code></pre>
         </div>
         <dl>
           <dt>HOST=0.0.0.0 npm start</dt>
-          <dd>Access http://x.x.x.x:3000 from another device</dd>
+          <dd>Allows access from another device on the same network</dd>
           <dt>PORT=&lt;port&gt;</dt>
-          <dd>Safe range for dev servers: 3000–9000</dd>
+          <dd>Common development port range: 3000–9000</dd>
           <dt>ip addr</dt>
           <dd>Find your Termux device IP</dd>
         </dl>
@@ -209,12 +213,14 @@ npm install</code></pre>
   <section id="build">
     <h2>Building React Projects</h2>
 
-    <nav>
-      <a href="#build-vite">Vite + React</a>
-      <a href="#build-cra">CRA</a>
+    <nav aria-label="build-navigation">
+      <ul>
+        <li><a href="#build-vite">Vite + React</a></li>
+        <li><a href="#build-cra">CRA</a></li>
+      </ul>
     </nav>
 
-    <p>development code (JSX, modules, imports, etc.) and turns it into plain HTML, CSS, and JS</p>
+    <p>The build process takes development code (JSX, modules, imports, etc.) and turns it into plain HTML, CSS, and JS</p>
     <pre data-copy><code>cd &lt;project-folder&gt;</code></pre>
     <dl style="margin-bottom: 32px">
       <dt>cd &lt;project-folder&gt;</dt>
@@ -258,7 +264,7 @@ npm install</code></pre>
         </div>
         <dl>
           <dt>npm install -g serve</dt>
-          <dd>Install serve (if not installed)</dd>
+          <dd>Install serve globally (if not already installed)</dd>
           <dt>serve -s build</dt>
           <dd>Starts a local server with production files</dd>
           <dt>http://localhost:3000</dt>
@@ -273,16 +279,18 @@ npm install</code></pre>
 
 
   <section id="deploy-to-github-gh-pages">
-    <h2>Deploy to Github（gh-pages）</h2>
+    <h2>Deploy to GitHub（gh-pages）</h2>
 
-    <nav>
-      <a href="#gh-pages-install">Install gh-pages</a>
-      <a href="#gh-pages-vite-config">Configure vite.config.js</a>
-      <a href="#gh-pages-package-json">Update package.json</a>
-      <a href="#gh-pages-push-to-main">Push to main branch</a>
-      <a href="#gh-pages-deploy">Deploy</a>
-      <a href="#gh-pages-enable-github-pages">Enable GitHub Pages</a>
-      <a href="#gh-pages-next-time">Next Time</a>
+    <nav aria-label="deploy-to-github-gh-pages-navigation">
+      <ul>
+        <li><a href="#gh-pages-install">Install gh-pages</a></li>
+        <li><a href="#gh-pages-vite-config">Configure vite.config.js</a></li>
+        <li><a href="#gh-pages-package-json">Update package.json</a></li>
+        <li><a href="#gh-pages-push-to-main">Push to main branch</a></li>
+        <li><a href="#gh-pages-deploy">Deploy</a></li>
+        <li><a href="#gh-pages-enable-github-pages">Enable GitHub Pages</a></li>
+        <li><a href="#gh-pages-next-time">Next Time</a></li>
+      </ul>
     </nav>
 
     <section id="gh-pages-install">
@@ -378,13 +386,15 @@ npm run deploy</code></pre>
 
 
   <section id="deploy-to-github-github-actions">
-    <h2>Deploy to Github（GitHub Actions）</h2>
+    <h2>Deploy to GitHub（GitHub Actions）</h2>
 
-    <nav>
-      <a href="#actions-vite-config">Configure vite.config.js</a>
-      <a href="#actions-enable-github-pages">Enable GitHub Pages</a>
-      <a href="#actions-create-workflow">Create GitHub Actions Workflow</a>
-      <a href="#actions-push">Push to GitHub</a>
+    <nav aria-label="deploy-to-github-github-actions-navigation">
+      <ul>
+        <li><a href="#actions-vite-config">Configure vite.config.js</a></li>
+        <li><a href="#actions-enable-github-pages">Enable GitHub Pages</a></li>
+        <li><a href="#actions-create-workflow">Create GitHub Actions Workflow</a></li>
+        <li><a href="#actions-push">Push to GitHub</a></li>
+      </ul>
     </nav>
 
     <section id="actions-vite-config">

@@ -43,7 +43,7 @@
 
 <header>
   <h1>Termux Script Syntax</h1>
-  <nav class="internal-link">
+  <nav class="internal-link" aria-label="Main internal navigation">
     <ul>
       <li><a href="#variable">variable</a></li>
       <li><a href="#if">if</a></li>
@@ -57,7 +57,7 @@
   </nav>
 
   <nav class="external-link">
-    <h2>Quick Reference（External）</h2>
+    <h2>External Links</h2>
     <ul>
       <li><a href="../index.html">Termux Commands</a></li>
       <li><a href="local-server.html">Local Server</a></li>
@@ -75,7 +75,7 @@
   <section id="variable">
     <h2>variable</h2>
     <pre data-copy><code>name="Lanlanwi"
-echo $name</code></pre>
+echo "$name"</code></pre>
   </section>
 
 
@@ -85,14 +85,14 @@ echo $name</code></pre>
     <div class="code-group">
       <pre data-copy><code>x=1
 
-if [ $x -eq 1 ]; then
+if [ "$x" -eq 1 ]; then
   echo "It is 1"
 fi</code></pre>
       <pre data-copy><code>x=2
 
-if [ $x -eq 1 ]; then
+if [ "$x" -eq 1 ]; then
   echo "It is 1"
-elif [ $x -eq 2 ]; then
+elif [ "$x" -eq 2 ]; then
   echo "It is 2"
 else
   echo "Something else"
@@ -131,37 +131,31 @@ fi</code></pre>
   <section id="for">
     <h2>for</h2>
     <div class="code-group">
-      <pre data-copy><code>for i in 1 2 3
-do
-  echo $i
+      <pre data-copy><code>for i in 1 2 3 do
+  echo "$i"
 done</code></pre>
-      <pre data-copy><code>for file in *.txt
-do
-  echo $file
+      <pre data-copy><code>for file in *.txt do
+  echo "$file"
 done</code></pre>
-      <pre data-copy><code>for i in {1..30}
-do
-  echo $i
+      <pre data-copy><code>for i in {1..30} do
+  echo "$i"
 done</code></pre>
-      <pre data-copy><code>for ((i=0; i&lt;5; i++))
-do
-  echo $i
+      <pre data-copy><code>for ((i=0; i&lt;5; i++)) do
+  echo "$i"
 done</code></pre>
     </div>
     <div class="code-group" style="margin-top: 32px;">
-      <pre data-copy><code>for i in {1..30}
-do
-  if [ $i -eq 5 ]; then
+      <pre data-copy><code>for i in {1..30} do
+  if [ "$i" -eq 5 ]; then
     break
   fi
-  echo $i
+  echo "$i"
 done</code></pre>
-      <pre data-copy><code>for i in {1..10}
-do
-  if [ $i -eq 5 ]; then
+      <pre data-copy><code>for i in {1..10} do
+  if [ "$i" -eq 5 ]; then
     continue
   fi
-  echo $i
+  echo "$i"
 done</code></pre>
     </div>
   </section>
@@ -173,13 +167,11 @@ done</code></pre>
     <div class="code-group">
       <pre data-copy><code>i=5
 
-while [ $i -gt 0 ]
-do
-  echo $i
+while [ "$i" -gt 0 ] do
+  echo "$i"
   i=$((i-1))
 done</code></pre>
-      <pre data-copy><code>while [ -f test.txt ]
-do
+      <pre data-copy><code>while [ -f test.txt ] do
   echo "File exists"
   sleep 2
 done</code></pre>
@@ -187,6 +179,7 @@ done</code></pre>
     <ul>
       <li>As long as test.txt exists</li>
       <li>Print a message every 2 seconds</li>
+      <li>If loop use Ctrl+C to stop</li>
     </ul>
   </section>
 

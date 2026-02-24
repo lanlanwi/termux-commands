@@ -43,7 +43,7 @@
 
 <header>
   <h1>Termux Shell Scripting & Aliases</h1>
-  <nav class="internal-link">
+  <nav class="internal-link" aria-label="Main internal navigation">
     <ul>
       <li><a href="#shell-script">Shell Script</a></li>
       <li><a href="#alias">alias</a></li>
@@ -51,7 +51,7 @@
   </nav>
 
   <nav class="external-link">
-    <h2>Quick Reference（External）</h2>
+    <h2>External Links</h2>
     <ul>
       <li><a href="../index.html">Termux Commands</a></li>
       <li><a href="local-server.html">Local Server</a></li>
@@ -69,10 +69,12 @@
   <section id="shell-script">
     <h2>Shell Script</h2>
 
-    <nav>
-      <a href="#sh-create">Create the script</a>
-      <a href="#sh-inside-file">Inside the file</a>
-      <a href="#sh-termux-widget">Termux Widget</a>
+    <nav aria-label="shell-script-navigation">
+      <ul>
+        <li><a href="#sh-create">Create the script</a></li>
+        <li><a href="#sh-inside-file">Inside the file</a></li>
+        <li><a href="#sh-termux-widget">Termux Widget</a></li>
+      </ul>
     </nav>
 
     <section id="sh-create">
@@ -98,7 +100,15 @@ echo "Hello"</code></pre>
       </div>
       <dl>
         <dt>#!/data/data/com.termux/files/usr/bin/bash</dt>
-        <dd>#! is shebang</dd>
+        <dd>
+          <ul>
+            <li>#! is shebang</li>
+            <li>Must be first line</li>
+            <li>No spaces before it</li>
+            <li>Defines interpreter</li>
+            <li>File must be executable</li>
+          </ul>
+        </dd>
         <dt>which bash</dt>
         <dd>Get bash path for shebang</dd>
       </dl>
@@ -120,10 +130,12 @@ mv script.sh ~/.shortcuts/</code></pre>
   <section id="alias">
     <h2>alias</h2>
 
-    <nav>
-      <a href="#alias-temporary">Temporary alias (current session only)</a>
-      <a href="#alias-permanent">Make it permanent</a>
-      <a href="#alias-view-and-remove">View and Remove</a>
+    <nav aria-label="alias-navigation">
+      <ul>
+        <li><a href="#alias-temporary">Temporary alias (current session only)</a></li>
+        <li><a href="#alias-permanent">Make it permanent</a></li>
+        <li><a href="#alias-view-and-remove">View and Remove</a></li>
+      </ul>
     </nav>
 
     <p>An alias lets you create a shortcut for a longer command</p>

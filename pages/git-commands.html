@@ -43,7 +43,7 @@
 
 <header>
   <h1>Termux Git Commands</h1>
-  <nav class="internal-link">
+  <nav class="internal-link" aria-label="Main internal navigation">
     <ul>
       <li><a href="#install-git">Install Git</a></li>
       <li><a href="#initialize">Initialize a repository</a></li>
@@ -61,7 +61,7 @@
   </nav>
 
   <nav class="external-link">
-    <h2>Quick Reference（External）</h2>
+    <h2>External Links</h2>
     <ul>
       <li><a href="../index.html">Termux Commands</a></li>
       <li><a href="local-server.html">Local Server</a></li>
@@ -163,18 +163,20 @@ git push</code></pre>
   <section id="remote-management">
     <h2>Remote repository management</h2>
 
-    <nav>
-      <a href="#https">HTTPS</a>
-      <a href="#ssh">SSH</a>
-      <a href="#choosing-between-https-and-ssh">Choosing Between HTTPS and SSH</a>
-      <a href="#change-remote-url">Change remote URL</a>
-      <a href="#remove-remote">Remove remote</a>
-      <a href="#list-remote">List remote</a>
+    <nav aria-label="remote-management-navigation">
+      <ul>
+        <li><a href="#https">HTTPS</a></li>
+        <li><a href="#ssh">SSH</a></li>
+        <li><a href="#choosing-between-https-and-ssh">Choosing Between HTTPS and SSH</a></li>
+        <li><a href="#change-remote-url">Change remote URL</a></li>
+        <li><a href="#remove-remote">Remove remote</a></li>
+        <li><a href="#list-remote">List remote</a></li>
+      </ul>
     </nav>
 
-    <section id="https">
-      <h3>HTTPS (Easy Setup)</h3>
-      <pre data-copy><code>git remote add origin https://github.com/username/repo.git</code></pre>
+   <section id="https">
+     <h3>HTTPS (Easy Setup)</h3>
+     <pre data-copy><code>git remote add origin https://github.com/username/repo.git</code></pre>
       <ul>
         <li>First auth requires username + PAT, then cached</li>
         <li>Generate token: GitHub → Settings → Developer settings → Personal Access Tokens</li>
@@ -273,14 +275,16 @@ git push</code></pre>
   <section id="branch-management">
     <h2>Branch Management</h2>
 
-    <nav>
-      <a href="#branch-list">List branches</a>
-      <a href="#branch-create">Create a new branch</a>
-      <a href="#branch-switch">Switch branch</a>
-      <a href="#branch-create-switch">Create & switch in one step</a>
-      <a href="#branch-merge">Merge to main branch</a>
-      <a href="#branch-rename">Renames the current branch</a>
-      <a href="#branch-delete">Delete branch</a>
+    <nav aria-label="branch-management-navigation">
+      <ul>
+        <li><a href="#branch-list">List branches</a></li>
+        <li><a href="#branch-create">Create a new branch</a></li>
+        <li><a href="#branch-switch">Switch branch</a></li>
+        <li><a href="#branch-create-switch">Create & switch in one step</a></li>
+        <li><a href="#branch-merge">Merge to main branch</a></li>
+        <li><a href="#branch-rename">Renames the current branch</a></li>
+        <li><a href="#branch-delete">Delete branch</a></li>
+      </ul>
     </nav>
 
     <section id="branch-list">
@@ -423,8 +427,10 @@ git merge branch_name</code></pre>
   <section id="fetch-and-merge">
     <h2>Fetch & Merge</h2>
 
-    <nav>
-      <a href="#conflict">Conflict</a>
+    <nav aria-label="fetch-and-merge-navigation">
+      <ul>
+        <li><a href="#conflict">Conflict</a></li>
+      </ul>
     </nav>
 
     <div class="code-group">
@@ -547,12 +553,14 @@ git commit</code></pre>
   <section id="how-to-deploy">
     <h2>How to Deploy (Step by Step)</h2>
 
-    <nav>
-      <a href="#first-deploy">First Deploy to GitHub</a>
-      <a href="#next-deployment">Next Deployment</a>
-      <a href="#change-remote-url-and-deploy">Change Remote URL and Deploy</a>
-      <a href="#force-push">Force Push (Overwrite Remote)</a>
-      <a href="#empty">Empty the remote repository</a>
+    <nav aria-label="how-to-deploy-navigation">
+      <ul>
+        <li><a href="#first-deploy">First Deploy to GitHub</a></li>
+        <li><a href="#next-deployment">Next Deployment</a></li>
+        <li><a href="#change-remote-url-and-deploy">Change Remote URL and Deploy</a></li>
+        <li><a href="#force-push">Force Push (Overwrite Remote)</a></li>
+        <li><a href="#empty">Empty the remote repository</a></li>
+      </ul>
     </nav>
 
     <section id="first-deploy">
