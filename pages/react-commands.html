@@ -51,6 +51,7 @@
       <li><a href="#build">Building React Projects</a></li>
       <li><a href="#deploy-to-github-gh-pages">Deploy to GitHub（gh-pages）</a></li>
       <li><a href="#deploy-to-github-github-actions">Deploy to GitHub（GitHub Actions）</a></li>
+      <li><a href="#move-src">Move src to Internal Storage</a></li>
     </ul>
   </nav>
 
@@ -493,6 +494,89 @@ git push -u origin main</code></pre>
 git commit -m "update"
 git pull
 git push</code></pre>
+      </section>
+
+    </section>
+
+  </section>
+
+
+
+  <section id="move-src">
+    <h2>Move src to Internal Storage</h2>
+
+    <nav aria-label="move-src-navigation">
+      <ul>
+        <li><a href="#move-src-move-files">Move files</a></li>
+        <li><a href="#move-src-vite-config">Configure vite.config.js</a></li>
+        <li><a href="#move-src-move-back">Move back</a></li>
+      </ul>
+    </nav>
+
+    <p>For using edit app</p>
+
+    <section id="move-src-move-files">
+      <h3>Move files</h3>
+      <div class="code-group">
+        <pre data-copy><code>termux-setup-storage</code></pre>
+        <pre data-copy><code>mkdir ~/storage/shared/react-src-folder</code></pre>
+        <pre data-copy><code>mv src public index.html ~/storage/shared/react-src-folder</code></pre>
+      </div>
+      <dl>
+        <dt>mv src public index.html ~/storage/shared/react-src-folder</dt>
+        <dd>Move index.html & public folder & src folder</dd>
+      </dl>
+    </section>
+
+    <section id="move-src-vite-config">
+      <h3>Configure vite.config.js</h3>
+      <div class="code-group">
+        <pre data-copy><code>nano vite.config.js</code></pre>
+        <pre data-copy><code>import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import { resolve } from "path";
+
+// https://vite.dev/config/
+export default defineConfig({
+  root: "/storage/emulated/0/react-src-folder",
+  plugins: [react()],
+  resolve: {
+    alias: {
+      react: resolve(__dirname, "node_modules/react"),
+      "react-dom": resolve(__dirname, "node_modules/react-dom")
+    }
+  }
+});</code></pre>
+      </div>
+      <dl>
+        <dt>root: ""</dt>
+        <dd>src folder direction</dd>
+      </dl>
+    </section>
+
+    <section id="move-src-move-back">
+      <h3>Move back</h3>
+      <p>For building and deploying</p>
+
+      <section>
+        <h4>vite.config.js</h4>
+        <div class="code-group">
+          <pre data-copy><code>nano vite.config.js</code></pre>
+          <pre data-copy><code>import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
+})</code></pre>
+        </div>
+      </section>
+
+      <section>
+        <h4>Files</h4>
+        <div class="code-group">
+          <pre data-copy><code>mv ~/storage/shared/react-src-folder/{src,public,index.html} .</code></pre>
+        </div>
       </section>
 
     </section>
