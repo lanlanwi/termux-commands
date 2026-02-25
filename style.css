@@ -225,6 +225,7 @@ h2 + nav li {
 
     margin: 0;
     padding: 0;
+    border: 1px solid red;
 }
 
 h2 + nav a {
