@@ -227,7 +227,6 @@ h2 + nav li {
 
     margin: 0;
     padding: 0;
-    border: 1px solid red;
 }
 
 h2 + nav a {
@@ -340,7 +339,6 @@ dd ul li {
     line-height: 1.2;
     letter-spacing: 0.8px;
     word-spacing: 3.2px;
-    border: 1px solid red;
 }
 
 dd ul li:before { content: "・"; }
