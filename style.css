@@ -223,6 +223,8 @@ h2 + nav ul {
 h2 + nav li {
     list-style: none;
 
+    display: inline-block;
+
     margin: 0;
     padding: 0;
     border: 1px solid red;
@@ -233,6 +235,8 @@ h2 + nav a {
     line-height: 1.5;
     letter-spacing: 0.8px;
     word-spacing: 1.6px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 
     color: #808080;
 }
