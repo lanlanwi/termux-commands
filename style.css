@@ -255,6 +255,8 @@ h3 {
 
     font-size: 24px;
     font-weight: bold;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 
     color: #444;
     background-color: rgba(0, 0, 0, 0.075);
@@ -265,6 +267,8 @@ h4 {
     padding: 5px 20px;
 
     font-size: 20px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 
