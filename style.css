@@ -74,6 +74,8 @@ header h1 {
 
     font-size: 40px;    
     text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
   /* Internal Link */
@@ -205,6 +207,8 @@ main h2 {
     border-bottom: 1.2px solid #DDD;
 
     font-size: 32px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 h2 + nav { width: 100%; }
@@ -303,8 +307,7 @@ dl > * {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.8px;
-    word-spacing: 3.2px;
-    
+    word-spacing: 3.2px; 
     word-wrap: break-word;
     overflow-wrap: break-word;
     word-break: keep-all;
@@ -367,9 +370,15 @@ dd ul li:before { content: "・"; }
 
 [data-copy]:hover { background-color: #404040; }
 [data-copy]:active { background-color: #000; }
-[data-copy]::selection { background-color: #FFF; }
 
-[data-copy] * {
+[data-copy]:focus-visible {
+    outline: 1.2px solid #00BCD4;
+    outline-offset: -1.2px;
+}
+
+[data-copy] *::selection { background-color: #FFF; }
+
+[data-copy] code {
     display: block;
     overflow-x: auto;
 
@@ -402,6 +411,36 @@ dd ul li:before { content: "・"; }
 
 .code-group [data-copy]:first-of-type { border-top: none; }
 .code-group [data-copy]:last-of-type { border-bottom: none; }
+
+.code-status {
+    display: block;
+    opacity: 0;
+
+    max-width: 95%;
+    max-height: 95%;
+    position: fixed;
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-50%);
+
+    padding: 4px 8px;
+    border-radius: 8px;
+
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.8px;
+    word-spacing: 3.2px; 
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+
+    color: #FFF;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    transition: opacity 0.3s ease;
+
+    pointer-events: none;
+}
 /* /Code Block */
 /* /Main */
 
