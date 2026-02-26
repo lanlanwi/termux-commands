@@ -201,7 +201,7 @@ main > section > section {
     margin-top: 48px;
 }
 
-main > section > section:nth-of-type(-n + 1) { margin-top: 16px; }
+main > section > section:nth-of-type(-n + 1) { margin-top: 0; }
 
 main h2 {
     width: 100%;
@@ -491,7 +491,19 @@ footer .license {
       margin: 32px auto;
   }
 
-  main > section > section { width: calc(50% - 6px); }
+  main > section > section {
+      width: calc(50% - 6px);
+
+      margin-top: 48px;
+  }
+
+  main > section > section.full-width {
+      width: 100%;
+
+      margin-top: 48px;
+  }
+
+  main > section > section:nth-of-type(-n + 1).full-width { margin-top: 0; }
   
-  main > section > section:nth-of-type(-n + 2) { margin: 0; }
+  main > section:has(> section:nth-of-type(1):not(.full-width)) > section:nth-of-type(2) { margin-top: 0; }
 }
