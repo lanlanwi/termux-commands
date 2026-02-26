@@ -362,6 +362,8 @@ dd ul li {
 
 dd ul li:before { content: "・"; }
 
+dl.dl-margin-bot { margin-bottom: 48px; }
+
 
 
 /* Code Block */
