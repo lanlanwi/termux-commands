@@ -144,7 +144,7 @@ done</code></pre>
   echo "$i"
 done</code></pre>
     </div>
-    <div class="code-group" style="margin-top: 32px;">
+    <div class="code-group">
       <pre data-copy><code>for i in {1..30} do
   if [ "$i" -eq 5 ]; then
     break
@@ -225,6 +225,16 @@ echo $2</code></pre>
       <li>hello → $1</li>
       <li>123 → $2</li>
     </ul>
+    <dl>
+      <dt>$0</dt>
+      <dd>The name of the script (or current shell)</dd>
+      <dt>$@</dt>
+      <dd>All arguments</dd>
+      <dt>$#</dt>
+      <dd>Number of arguments</dd>
+      <dt>shift</dt>
+      <dd>Shifts arguments to the left<br>($1 is removed, $2 becomes $1, etc.)</dd>
+    </dl>
   </section>
 
 

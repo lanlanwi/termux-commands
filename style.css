@@ -197,7 +197,7 @@ main > section > section {
     margin-top: 48px;
 }
 
-main > section > section:nth-of-type(-n + 1) { margin: 0; }
+main > section > section:nth-of-type(-n + 1) { margin-top: 16px; }
 
 main h2 {
     width: 100%;
@@ -288,6 +288,12 @@ p {
 }
 
 p + p { margin-top: 2px 0; }
+
+main p:first-child {
+    margin-bottom: 32px;
+
+    font-size: 16px;
+}
 
 dl {
     display: grid;
@@ -415,6 +421,8 @@ dd ul li:before { content: "・"; }
 
 .code-group [data-copy]:first-of-type { border-top: none; }
 .code-group [data-copy]:last-of-type { border-bottom: none; }
+
+.code-group + .code-group { margin-top: 32px; }
 
 .code-status {
     display: block;
