@@ -46,17 +46,17 @@
   <nav class="internal-link" aria-label="Main internal navigation">
     <ul>
       <li><a href="#npm-environment">Node.js / npm Environment</a></li>
-      <li><a href="#create-project">Create a React Project</a></li>
-      <li><a href="#start-server">Start the Development Server</a></li>
+      <li><a href="#create-project">Create A React Project</a></li>
+      <li><a href="#start-server">Start The Development Server</a></li>
       <li><a href="#build">Building React Projects</a></li>
-      <li><a href="#deploy-to-github-gh-pages">Deploy to GitHub（gh-pages）</a></li>
-      <li><a href="#deploy-to-github-github-actions">Deploy to GitHub（GitHub Actions）</a></li>
-      <li><a href="#move-src">Move src to Internal Storage</a></li>
+      <li><a href="#deploy-to-github-gh-pages">Deploy To GitHub（gh-pages）</a></li>
+      <li><a href="#deploy-to-github-github-actions">Deploy To GitHub（GitHub Actions）</a></li>
+      <li><a href="#move-src">Move src To Internal Storage</a></li>
     </ul>
   </nav>
 
   <nav class="external-link">
-    <h2>External Links</h2>
+    <p class="nav-title">External Links</p>
     <ul>
       <li><a href="../index.html">Termux Commands</a></li>
       <li><a href="local-server.html">Local Server</a></li>
@@ -75,12 +75,12 @@
     <h2>Node.js / npm Environment</h2>
 
     <section>
-      <h3>install Node.js</h3>
+      <h3>Install Node.js</h3>
       <pre data-copy><code>pkg install nodejs</code></pre>
     </section>
 
     <section>
-      <h3>Check versions</h3>
+      <h3>Check Versions</h3>
       <pre data-copy><code>node -v
 npm -v</code></pre>
     </section>
@@ -90,9 +90,9 @@ npm -v</code></pre>
 
 
   <section id="create-project">
-    <h2>Create a React Project</h2>
+    <h2>Create A React Project</h2>
 
-    <nav aria-label="create-project-navigation">
+    <nav aria-label="Create project navigation">
       <ul>
         <li><a href="#create-vite-react">Vite + React</a></li>
         <li><a href="#create-cra">CRA</a></li>
@@ -100,7 +100,7 @@ npm -v</code></pre>
     </nav>
 
     <section id="create-vite-react">    
-      <h3>Vite + React (recommended)</h3>
+      <h3>Vite + React (Recommended)</h3>
       <p>Vite is fast, lightweight, and supports hot reloading</p>
       <div class="code-group">
         <pre data-copy><code>npm create vite@latest &lt;projectname&gt;</code></pre>
@@ -133,9 +133,9 @@ npm install</code></pre>
 
 
   <section id="start-server">
-    <h2>Start the Development Server</h2>
+    <h2>Start The Development Server</h2>
 
-    <nav aria-label="start-server-navigation">
+    <nav aria-label="Start server navigation">
       <ul>
         <li><a href="#start-vite">Vite + React</a></li>
         <li><a href="#start-cra">CRA</a></li>
@@ -239,7 +239,7 @@ npm install</code></pre>
   <section id="build">
     <h2>Building React Projects</h2>
 
-    <nav aria-label="build-navigation">
+    <nav aria-label="Build navigation">
       <ul>
         <li><a href="#build-vite">Vite + React</a></li>
         <li><a href="#build-cra">CRA</a></li>
@@ -286,7 +286,7 @@ npm install</code></pre>
       </dl>
 
       <section>
-        <h4>Serve the Build Locally</h4>
+        <h4>Serve The Build Locally</h4>
         <div class="code-group">
           <pre data-copy><code>npm install -g serve</code></pre>
           <pre data-copy><code>serve -s build</code></pre>
@@ -309,14 +309,14 @@ npm install</code></pre>
 
 
   <section id="deploy-to-github-gh-pages">
-    <h2>Deploy to GitHub（gh-pages）</h2>
+    <h2>Deploy To GitHub（gh-pages）</h2>
 
-    <nav aria-label="deploy-to-github-gh-pages-navigation">
+    <nav aria-label="Deploy to GitHub gh-pages navigation">
       <ul>
         <li><a href="#gh-pages-install">Install gh-pages</a></li>
         <li><a href="#gh-pages-vite-config">Configure vite.config.js</a></li>
         <li><a href="#gh-pages-package-json">Update package.json</a></li>
-        <li><a href="#gh-pages-push-to-main">Push to main branch</a></li>
+        <li><a href="#gh-pages-push-to-main">Push To main Branch</a></li>
         <li><a href="#gh-pages-deploy">Deploy</a></li>
         <li><a href="#gh-pages-enable-github-pages">Enable GitHub Pages</a></li>
         <li><a href="#gh-pages-next-time">Next Time</a></li>
@@ -351,12 +351,12 @@ export default defineConfig({
       <pre data-copy><code>nano package.json</code></pre>
 
       <section>
-        <h4>Add homepage</h4>
+        <h4>Add Homepage</h4>
         <pre data-copy><code>"homepage": "https://your-username.github.io/repo-name",</code></pre>
       </section>
 
       <section>
-        <h4>Update scripts</h4>
+        <h4>Update Scripts</h4>
         <pre data-copy><code>"scripts": {
   "dev": "vite",
   "build": "vite build",
@@ -372,7 +372,7 @@ export default defineConfig({
     </section>
 
     <section id="gh-pages-push-to-main">
-      <h3>Push to main branch</h3>
+      <h3>Push To main Branch</h3>
       <p>For source code backup and version control</p>
       <div class="code-group">
         <pre data-copy><code>git init
@@ -416,14 +416,14 @@ npm run deploy</code></pre>
 
 
   <section id="deploy-to-github-github-actions">
-    <h2>Deploy to GitHub（GitHub Actions）</h2>
+    <h2>Deploy To GitHub（GitHub Actions）</h2>
 
-    <nav aria-label="deploy-to-github-github-actions-navigation">
+    <nav aria-label="Deploy to GitHub GitHub Actions navigation">
       <ul>
         <li><a href="#actions-vite-config">Configure vite.config.js</a></li>
         <li><a href="#actions-enable-github-pages">Enable GitHub Pages</a></li>
         <li><a href="#actions-create-workflow">Create GitHub Actions Workflow</a></li>
-        <li><a href="#actions-push">Push to GitHub</a></li>
+        <li><a href="#actions-push">Push To GitHub</a></li>
       </ul>
     </nav>
 
@@ -506,7 +506,7 @@ jobs:
     </section>
 
     <section id="actions-push">
-      <h3>Push to GitHub</h3>
+      <h3>Push To GitHub</h3>
       <div class="code-group">
         <pre data-copy><code>git init
 git remote add origin URL
@@ -532,20 +532,20 @@ git push</code></pre>
 
 
   <section id="move-src">
-    <h2>Move src to Internal Storage</h2>
+    <h2>Move src To Internal Storage</h2>
 
-    <nav aria-label="move-src-navigation">
+    <nav aria-label="move src navigation">
       <ul>
-        <li><a href="#move-src-move-files">Move files</a></li>
+        <li><a href="#move-src-move-files">Move Files</a></li>
         <li><a href="#move-src-vite-config">Configure vite.config.js</a></li>
-        <li><a href="#move-src-move-back">Move back</a></li>
+        <li><a href="#move-src-move-back">Move Back</a></li>
       </ul>
     </nav>
 
     <p>For using edit app</p>
 
     <section id="move-src-move-files">
-      <h3>Move files</h3>
+      <h3>Move Files</h3>
       <div class="code-group">
         <pre data-copy><code>termux-setup-storage</code></pre>
         <pre data-copy><code>mkdir ~/storage/shared/react-src-folder</code></pre>
@@ -584,7 +584,7 @@ export default defineConfig({
     </section>
 
     <section id="move-src-move-back">
-      <h3>Move back</h3>
+      <h3>Move Back</h3>
       <p>For building and deploying</p>
 
       <section>

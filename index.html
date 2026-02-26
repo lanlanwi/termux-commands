@@ -52,12 +52,12 @@
       <li><a href="#package-management">Package Management</a></li>
       <li><a href="#restrictions-permissions">Restrictions / Permissions</a></li>
       <li><a href="#exit-session">Exit / Session</a></li>
-      <li><a href="#combine-multiple-commands">Combine multiple commands</a></li>
+      <li><a href="#combine-multiple-commands">Combine Multiple Commands</a></li>
     </ul>
   </nav>
 
   <nav class="external-link">
-    <h2>External Links</h2>
+    <p class="nav-title">External Links</p>
     <ul>
       <li><a href="pages/local-server.html">Local Server</a></li>
       <li><a href="pages/react-commands.html">React Commands</a></li>
@@ -76,7 +76,7 @@
   <section id="directory-management">
     <h2>Directory Management</h2>
 
-    <nav aria-label="directory-management-navigation">
+    <nav aria-label="Directory management navigation">
       <ul>
         <li><a href="#pwd">pwd</a></li>
         <li><a href="#ls">ls</a></li>       
@@ -202,7 +202,7 @@
   <section id="file-management">
     <h2>File Management</h2>
 
-    <nav aria-label="file-management-navigation">
+    <nav aria-label="File management navigation">
       <ul>
         <li><a href="#cp">cp</a></li>
         <li><a href="#mv">mv</a></li>
@@ -461,7 +461,7 @@
   <section id="path-and-pattern-shortcuts">
     <h2>Path & Pattern Shortcuts</h2>
 
-    <nav aria-label="path-and-pattern-shortcuts-navigation">
+    <nav aria-label="Path and pattern shortcuts navigation">
       <ul>
         <li><a href="#wildcard">Wildcard</a></li>
         <li><a href="#brace-expansion">Brace Expansion</a></li>
@@ -531,7 +531,7 @@
   <section id="text-editing">
     <h2>Text Editing</h2>
 
-    <nav aria-label="text-editing-navigation">
+    <nav aria-label="Text editing navigation">
       <ul>
         <li><a href="#nano">nano</a></li>
         <li><a href="#vim">vim</a></li>
@@ -582,7 +582,7 @@
       </dl>
 
       <section>
-        <h4>Insert text (Insert mode)</h4>
+        <h4>Insert Text (Insert Mode)</h4>
         <dl>
           <dt>i</dt>
           <dd>Insert at cursor</dd>
@@ -604,7 +604,7 @@
       </section>
 
       <section>
-        <h4>Move around (Normal mode)</h4>
+        <h4>Move Around (Normal Mode)</h4>
         <dl>
           <dt>h</dt>
           <dd>← left</dd>
@@ -653,7 +653,7 @@
       </section>
 
       <section>
-        <h4>Save and quit (Command-line mode)</h4>
+        <h4>Save And Quit (Command-line Mode)</h4>
         <dl>
           <dt>:w</dt>
           <dd>Save</dd>
@@ -667,7 +667,7 @@
       </section>
 
       <section>
-        <h4>Search and replace</h4>
+        <h4>Search And Replace</h4>
         <dl>
           <dt>/text → press Enter → n for next, N for previous</dt>
           <dd>Search</dd>
@@ -687,15 +687,15 @@
   <section id="package-management">
     <h2>Package Management</h2>
 
-    <nav aria-label="package-management-navigation">
+    <nav aria-label="Package management navigation">
       <ul>
         <li><a href="#pkg-search">Search</a></li>
         <li><a href="#pkg-install">Install</a></li>
         <li><a href="#pkg-update">Update</a></li>
         <li><a href="#pkg-uninstall">Uninstall</a></li>
-        <li><a href="#pkg-list-installed">List installed</a></li>
-        <li><a href="#pkg-list-all">Available package list</a></li>
-        <li><a href="#pkg-show">Check package details</a></li>
+        <li><a href="#pkg-list-installed">List Installed</a></li>
+        <li><a href="#pkg-list-all">Available Package List</a></li>
+        <li><a href="#pkg-show">Check Package Details</a></li>
       </ul>
     </nav>
 
@@ -754,19 +754,19 @@
     </section>
 
     <section id="pkg-list-installed">
-      <h3>List installed</h3>
+      <h3>List Installed</h3>
       <p>Lists all installed packages</p>
       <pre data-copy><code>pkg list-installed</code></pre>
     </section>
 
     <section id="pkg-list-all">
-      <h3>Available package list</h3>
+      <h3>Available Package List</h3>
       <p>List all available packages</p>
       <pre data-copy><code>pkg list-all</code></pre>
     </section>
 
     <section id="pkg-show">
-      <h3>Check package details</h3>
+      <h3>Check Package Details</h3>
       <p>Display info about an installed package (version, description, dependencies)</p>
       <pre data-copy><code>pkg show &lt;package&gt;</code></pre>
     </section>
@@ -778,7 +778,7 @@
   <section id="restrictions-permissions">
     <h2>Restrictions / Permissions</h2>
 
-    <nav aria-label="restriction-permission-navigation">
+    <nav aria-label="Restriction permission navigation">
       <ul>
         <li><a href="#chmod">chmod</a></li>
         <li><a href="#termux-setup-storage">termux-setup-storage</a></li>
@@ -837,7 +837,7 @@
   <section id="exit-session">
     <h2>Exit / Session</h2>
 
-    <nav aria-label="exit-session-navigation">
+    <nav aria-label="Exit session navigation">
       <ul>
         <li><a href="#exit">exit</a></li>
         <li><a href="#ctrl+c">Ctrl + C</a></li>
@@ -929,7 +929,7 @@
       </section>
 
       <section>
-        <h4>Detach (run in background)</h4>
+        <h4>Detach (Run In Background)</h4>
         <pre data-copy><code>Ctrl + b → d</code></pre>
         <ul>
           <li>This keeps everything running in the background</li>
@@ -937,7 +937,7 @@
       </section>
 
       <section>
-        <h4>Reattach (come back)</h4>
+        <h4>Reattach (Come Back)</h4>
         <div class="code-group">
           <pre data-copy><code>tmux attach</code></pre>
           <pre data-copy><code>tmux attach -t mysession</code></pre>
@@ -950,12 +950,12 @@
       </section>
 
       <section>
-        <h4>Create a new window</h4>
+        <h4>Create A New Window</h4>
         <pre data-copy><code>Ctrl + b → c</code></pre>
       </section>
 
       <section>
-        <h4>Switch windows</h4>
+        <h4>Switch Windows</h4>
         <div class="code-group">
           <pre data-copy><code>Ctrl + b → n</code></pre>
           <pre data-copy><code>Ctrl + b → p</code></pre>
@@ -969,7 +969,7 @@
       </section>
 
       <section>
-        <h4>Split the screen</h4>
+        <h4>Split The Screen</h4>
         <div class="code-group">
           <pre data-copy><code>Ctrl + b → "</code></pre>
           <pre data-copy><code>Ctrl + b → %</code></pre>
@@ -997,7 +997,7 @@
       </section>
 
       <section>
-        <h4>List sessions</h4>
+        <h4>List Sessions</h4>
         <pre data-copy><code>tmux ls</code></pre>
       </section>
 
@@ -1008,9 +1008,9 @@
 
 
   <section id="combine-multiple-commands">
-    <h2>Combine multiple commands</h2>
+    <h2>Combine Multiple Commands</h2>
 
-    <nav aria-label="combine-multiple-commands-navigation">
+    <nav aria-label="Combine multiple commands navigation">
       <ul>
         <li><a href="#and-and">&&</a></li>
         <li><a href="#semicolon">;</a></li>

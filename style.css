@@ -126,8 +126,12 @@ header nav.internal-link ul li a:active { background-color: rgba(0, 0, 0, 0.1); 
   /* External Link */
 header nav.external-link { margin: 0 16px; }
 
-header nav.external-link h2 {
+header nav.external-link .nav-title {
+    margin: 0;
+    padding: 0;
+
     font-size: 16px;
+    font-weight: bold;
 
     color: #555;
 }

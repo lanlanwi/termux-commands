@@ -46,12 +46,12 @@
   <nav class="internal-link" aria-label="Main internal navigation">
     <ul>
       <li><a href="#shell-script">Shell Script</a></li>
-      <li><a href="#alias">alias</a></li>
+      <li><a href="#alias">Alias</a></li>
     </ul>
   </nav>
 
   <nav class="external-link">
-    <h2>External Links</h2>
+    <p class="nav-title">External Links</p>
     <ul>
       <li><a href="../index.html">Termux Commands</a></li>
       <li><a href="local-server.html">Local Server</a></li>
@@ -69,16 +69,16 @@
   <section id="shell-script">
     <h2>Shell Script</h2>
 
-    <nav aria-label="shell-script-navigation">
+    <nav aria-label="Shell script navigation">
       <ul>
-        <li><a href="#sh-create">Create the script</a></li>
-        <li><a href="#sh-inside-file">Inside the file</a></li>
+        <li><a href="#sh-create">Create The Script</a></li>
+        <li><a href="#sh-inside-file">Inside The File</a></li>
         <li><a href="#sh-termux-widget">Termux Widget</a></li>
       </ul>
     </nav>
 
     <section id="sh-create">
-      <h3>Create the script</h3>
+      <h3>Create The Script</h3>
       <div class="code-group">
         <pre data-copy><code>nano script.sh</code></pre>
         <pre data-copy><code>chmod +x script.sh</code></pre>
@@ -90,7 +90,7 @@
     </section>
 
     <section id="sh-inside-file">
-      <h3>Inside the file</h3>
+      <h3>Inside The File</h3>
       <div class="code-group">
         <pre data-copy><code>#!/data/data/com.termux/files/usr/bin/bash
 
@@ -128,20 +128,20 @@ mv script.sh ~/.shortcuts/</code></pre>
 
 
   <section id="alias">
-    <h2>alias</h2>
+    <h2>Alias</h2>
 
-    <nav aria-label="alias-navigation">
+    <nav aria-label="Alias Navigation">
       <ul>
-        <li><a href="#alias-temporary">Temporary alias (current session only)</a></li>
-        <li><a href="#alias-permanent">Make it permanent</a></li>
-        <li><a href="#alias-view-and-remove">View and Remove</a></li>
+        <li><a href="#alias-temporary">Temporary Alias (Current Session Only)</a></li>
+        <li><a href="#alias-permanent">Make It Permanent</a></li>
+        <li><a href="#alias-view-and-remove">View And Remove</a></li>
       </ul>
     </nav>
 
     <p>An alias lets you create a shortcut for a longer command</p>
 
     <section id="alias-temporary">
-      <h3>Temporary alias (current session only)</h3>
+      <h3>Temporary Alias (Current Session Only)</h3>
       <div class="code-group">
         <pre data-copy><code>alias name='command'</code></pre>
         <pre data-copy><code>alias ll='ls -la'</code></pre>
@@ -156,7 +156,7 @@ mv script.sh ~/.shortcuts/</code></pre>
     </section>
 
     <section id="alias-permanent">
-      <h3>Make it permanent</h3>
+      <h3>Make It Permanent</h3>
       <div class="code-group">
         <pre data-copy><code>nano ~/.bashrc</code></pre>
         <pre data-copy><code>alias ll='ls -la'
@@ -174,7 +174,7 @@ alias update='pkg update && pkg upgrade'</code></pre>
     </section>
 
     <section id="alias-view-and-remove">
-      <h3>View and Remove</h3>
+      <h3>View And Remove</h3>
       <div class="code-group">
         <pre data-copy><code>alias</code></pre>
         <pre data-copy><code>unalias name</code></pre>
