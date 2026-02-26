@@ -253,9 +253,19 @@
       </div>
       <dl>
         <dt>file1 file2</dt>
-        <dd>Renames file1 to file2, or overwrites file2 if it already exists</dd>
+        <dd>
+          <ul>
+            <li>Renames file1 to file2</li>
+            <li>Overwrites file2 if it already exists</li>
+          </ul>
+        </dd>
         <dt>dir1/ dir2/</dt>
-        <dd>Renames dir1 to dir2, or overwrites dir2 if it already exists</dd>
+        <dd>
+          <ul>
+            <li>Renames dir1 to dir2</li>
+            <li>Overwrites dir2 if it already exists</li>
+          </ul>
+        </dd>
         <dt>-i</dt>
         <dd>Ask for confirmation if the target file exists</dd>
         <dt>-n</dt>
@@ -348,7 +358,12 @@
         <dt>file1 file2 &gt; newfile</dt>
         <dd>Merge files and create a new file</dd>
         <dt>&gt;&gt;</dt>
-        <dd>Append to a file<br>Type text → Enter → Ctrl+D to finish</dd>
+        <dd>
+          <ul>
+            <li>Append to a file</li>
+            <li>Type text → Enter → Ctrl+D to finish</li>
+          </ul>
+        </dd>
         <dt>-n</dt>
         <dd>Show file with line numbers</dd>
         <dt>-b</dt>
@@ -535,6 +550,9 @@
         <pre data-copy><code>pkg install nano</code></pre>
         <pre data-copy><code>nano [DIR]/filename</code></pre>
       </div>
+      <ul>
+        <li>Create a file if it does not exist</li>
+      </ul>
     </section>
 
     <section
@@ -547,14 +565,29 @@
         <pre data-copy><code>pkg install vim</code></pre>
         <pre data-copy><code>vim [DIR]/filename</code></pre>
       </div>
-      <p>Vim has different modes, and the keys do different things depending on the mode</p>
+      <ul>
+        <li>Create a file if it does not exist</li>
+        <li>Vim has different modes, and the keys do different things depending on the mode</li>
+      </ul>
       <dl>
         <dt>Normal</dt>
-        <dd>Move, delete, copy, search</dd>
+        <dd>
+          <ul>
+            <li>Move</li>
+            <li>Delete</li>
+            <li>Copy</li>
+            <li>Search</li>
+        </dd>
         <dt>Insert</dt>
         <dd>Type text</dd>
         <dt>Command-line</dt>
-        <dd>Save, quit, search/replace</dd>
+        <dd>
+          <ul>
+            <li>Save</li>
+            <li>Quit</li>
+            <li>Search / Replace</li>
+          </ul>
+        </dd>
       </dl>
 
       <section>
@@ -573,8 +606,10 @@
           <dt>O</dt>
           <dd>Open a new line below</dd>
         </dl>
-        <p>Type normally while in insert mode</p>
-        <p>Press Esc to go back to normal mode</p>
+        <ul>
+          <li>Type normally while in insert mode</li>
+          <li>Press Esc to go back to normal mode</li>
+        </ul>
       </section>
 
       <section>
