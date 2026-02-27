@@ -503,8 +503,28 @@ incoming changes
 
       <section>
         <h4>After Fixing The File</h4>
-        <pre data-copy><code>git add .
+        <div class="code-group">
+          <pre data-copy><code>git add .
+git rebase --continue</code></pre>
+          <pre data-copy><code>git add .
 git commit</code></pre>
+        </div>
+        <dl>
+          <dt>git rebase --continue</dt>
+          <dd>
+            <ul>
+              <li>Using sit status</li>
+              <li>rebase in progress</li>
+            </ul>
+          </dd>
+          <dt>git commit</dt>
+          <dd>
+            <ul>
+              <li>Using git status</li>
+              <li>You are in the middle of a merge</li>
+            </ul>
+          </dd>
+        </dl>
       </section>
 
       <section>
@@ -583,7 +603,8 @@ git remote add origin URL
 git branch -M main
 git add .
 git commit -m "first commit"
-git pull origin main
+git pull --rebase origin main
+# git checkout --theirs . OR git checkout --ours .
 git push -u origin main</code></pre>
       <ol>
         <li><a href="#initialize">git init</a></li>
