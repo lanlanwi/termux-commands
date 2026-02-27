@@ -124,9 +124,9 @@ header nav.internal-link ul li a:hover { outline: 1px solid hsl(0, 0%, 75%); }
 header nav.internal-link ul li a:active { background-color: rgba(0, 0, 0, 0.1); }
 
   /* External Link */
-header nav.external-link { margin: 0 16px; }
+header nav.site-nav { margin: 0 16px; }
 
-header nav.external-link .nav-title {
+header nav.site-nav .nav-title {
     margin: 0;
     padding: 0;
 
@@ -136,7 +136,7 @@ header nav.external-link .nav-title {
     color: #555;
 }
 
-header nav.external-link ul {
+header nav.site-nav ul {
     list-style: none;
 
     display: flex;
@@ -148,7 +148,7 @@ header nav.external-link ul {
     background-color: transparent;
 }
 
-header nav.external-link ul li {
+header nav.site-nav ul li {
     display: block;
     
     border-top: 0.3px solid #C0C0C0;
@@ -157,7 +157,7 @@ header nav.external-link ul li {
     margin: 0;
 }
 
-header nav.external-link ul li a {
+header nav.site-nav ul li a {
     display: block;
 
     padding: 1.2px 2.4px;
@@ -174,10 +174,10 @@ header nav.external-link ul li a {
     color: #555;
 }
 
-header nav.external-link ul li:nth-of-type(1) { border-top: none; }
-header nav.external-link ul li:nth-last-of-type(1) { border-bottom: none; }
+header nav.site-nav ul li:nth-of-type(1) { border-top: none; }
+header nav.site-nav ul li:nth-last-of-type(1) { border-bottom: none; }
 
-header nav.external-link ul li a:hover { box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2); }
+header nav.site-nav ul li a:hover { box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2); }
 /* /Header */
 
 
