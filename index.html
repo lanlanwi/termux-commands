@@ -218,6 +218,7 @@
         <li><a href="#less">less</a></li>
         <li><a href="#head">head</a></li>
         <li><a href="#tail">tail</a></li>
+        <li><a href="#rsync">rsync</a></li>
       </ul>
     </nav>
 
@@ -230,6 +231,7 @@
         <pre data-copy><code>cp -i [DIR]/file [DIR]/</code></pre>
         <pre data-copy><code>cp -n [DIR]/file [DIR]/</code></pre>
         <pre data-copy><code>cp -r [DIR]/folder [DIR]/</code></pre>
+        <pre data-copy><code>cp -r code/. .</code></pre>
       </div>
       <dl>
         <dt>file1 file2</dt>
@@ -240,6 +242,8 @@
         <dd>Do not overwrite existing files</dd>
         <dt>-r</dt>
         <dd>Copy a folder including all its contents</dd>
+        <dt>cp -r code/. .</dt>
+        <dd>Copy all contents of the code folder into the current directory</dd>
       </dl>
     </section>
 
@@ -456,6 +460,26 @@
         <dd>Last 5 lines</dd>
         <dt>-f</dt>
         <dd>Follow new lines in real time</dd>
+      </dl>
+    </section>
+
+    <section id="rsync">
+      <h3>rsync</h3>
+      <div class="code-group">
+        <pre data-copy><code>pkg install rsync</code></pre>
+        <pre data-copy><code>rsync -av --exclude='node_modules' --exclude='dist' ./ ~/storage/shared/Code</code></pre>
+      </div>
+      <dl>
+        <dt>-a</dt>
+        <dd>Keeps permissions, timestamps, etc</dd>
+        <dt>-v</dt>
+        <dd>Shows what’s happening</dd>
+        <dt>--exclude</dt>
+        <dd>Folders to ignore</dd>
+        <dt>./</dt>
+        <dd>Current directory contents</dd>
+        <dt>~/storage/shared/Code</dt>
+        <dd>Destination folder</dd>
       </dl>
     </section>
 
