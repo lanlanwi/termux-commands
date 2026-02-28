@@ -67,6 +67,34 @@ li {
 
 
 
+.skip-link {
+    z-index: 1000;
+
+    position: absolute;
+    top: 0;
+    left:0;
+    transform: translateX(-200%);
+
+    margin: 3.5px;
+    padding: 6px 10px;
+
+    font-size: 14px;
+    text-decoration: none;
+
+    background: #333;
+    color: #FFF;
+
+    border: 2px solid #C0C0C0;
+
+    transition: left 0.15s ease;
+}
+
+.skip-link:focus-visible { transform: translateX(0); }
+
+
+
+
+
 /* Header */
 header h1 {
     margin-top: 40px;
